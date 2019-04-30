@@ -1,0 +1,16 @@
+Title: "WdKA Research Publication"
+Date: "2019"
+Publiser: "WdKA"
+Design: "Myrna de Bruijn"
+TOC:  # TABLE OF CONTENTS
+      # follow this structure for all articles:
+  # first article
+  - title: "Something Something"
+    author: 
+      - "Name Surname" # first author 
+      - "Florian Cramer" # second author
+    docx: "test.docx" 
+  # second article
+  - title: "Huckle Berry Fin"
+    author: 
+      - "Mark Twain" 
