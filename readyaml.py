@@ -6,12 +6,12 @@ def readyaml(yamlfile):
     stream = open(yamlfile, 'r')
     try:
         metadata = yaml.load(stream)
-        pprint(metadata)
+        return metadata
     except Exception as e:
         print(e)
         print("Error: Missformated YAML")
 
 
 if __name__ == '__main__':
-    readyaml('publication_metadata.yaml')
-
+    metadata = readyaml('publication_metadata.yaml')
+    pprint(metadata)

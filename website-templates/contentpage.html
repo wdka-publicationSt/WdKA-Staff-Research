@@ -1,0 +1,16 @@
+{% from 'menu.html' import menu as menu %}
+{% extends "base.html" %}
+
+{% block title %}{{ mytitle }}{% endblock %}
+
+{% block content %} 
+	<div class="menu">
+	{{ menu(TOC) }}
+	</div>
+
+
+    <div id="content">
+		{{ content }}
+	</div>
+{% endblock %}
+
