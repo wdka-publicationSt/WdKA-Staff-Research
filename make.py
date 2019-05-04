@@ -2,7 +2,11 @@
 import sys
 import os
 from argparse import ArgumentParser
+from pprint import pprint
 from convert import pandoc_convert
+from readyaml import readyaml
+from createwebsite import jinja_env
+from createwebsite import jinja_render_template
 
 parser = ArgumentParser(prog=sys.argv[0],
                         usage='%(prog)s  output',
@@ -18,13 +22,9 @@ args = parser.parse_args()
 dir_parent = os.path.dirname((os.path.abspath(__file__)))
 dir_parent_ls = os.listdir(dir_parent)
 
-# dictionary strcuture and populate
-formats = {f: {
-    "format": f,
-    "dir": dir_parent + "/" + f}
-    for f in ["docx", "html", "icml"]}
-
-# print(formats)
+# metadata of publication from YAML file
+metadata = readyaml(dir_parent + '/' + 'publication_metadata.yaml')
+pprint(metadata)
 
 
 def ls_dir(d):
@@ -49,15 +49,45 @@ def convert_files(input_format_dict, output_format_dict):
         print(pandoc_output)
 
 
+def TOC_populate(metadata_dict):
+    for text_entry in metadata_dict['TOC']:
+        try:
+            docx = dir_parent + '/docx/' + text_entry['docx']
+            html = dir_parent + '/html/' + docx.replace('.docx', '.html')
+            # for text entry in TOC
+            # add full path of html and docx files
+            text_entry['html'] = html
+            text_entry['docx'] = docx
+            print(text_entry)
+
+        except Exception as e:
+            print('Error with {} in {}'.format(e, text_entry))
+            sys.exit(1)
+        print(text_entry)
+
+
 if args.output == 'website':
     print('Making {}'.format(args.output))
-    convert_files(input_format_dict=formats['docx'],
-              output_format_dict=formats['html'])
+    convert_files(input_format_dict=metadata['Formats']['docx'],
+                  output_format_dict=metadata['Formats']['html'])
+    TOC_populate(metadata)
+    env = jinja_env(dir_parent + '/website-templates')
+
+    # TODO: include template vars mytitle=metadata['Title'], TOC=metadata['TOC'], content="testing",
+
+    # use metadata['TOC'] to order publication
+
+    page=jinja_render_template(env=env,
+                          tmpl_file='contentpage.html')
+    print(env, page)
+
+
+
 elif args.output == 'html':
     print('Making {}'.format(args.output))
-    convert_files(input_format_dict=formats['docx'],
-                  output_format_dict=formats['html'])
+    convert_files(input_format_dict=metadata['Formats']['docx'],
+                  output_format_dict=metadata['Formats']['html'])
 elif args.output == 'icml':
     print('Making {}'.format(args.output))
-    convert_files(input_format_dict=formats['docx'],
-                  output_format_dict=formats['icml'])
+    convert_files(input_format_dict=metadata['Formats']['docx'],
+                  output_format_dict=metadata['Formats']['icml'])

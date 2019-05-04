@@ -14,3 +14,16 @@ TOC:  # TABLE OF CONTENTS
   - title: "Huckle Berry Fin"
     authors: 
       - "Mark Twain" 
+    docx: "test1.docx"
+
+### 
+Formats:
+  docx: 
+    dir: "docx"
+    format: "docx"
+  html:
+    dir: "html"
+    format: "html"
+  icml:
+    dir: "icml"
+    format: "icml"
