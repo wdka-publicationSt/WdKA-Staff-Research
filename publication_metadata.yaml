@@ -6,11 +6,11 @@ TOC:  # TABLE OF CONTENTS
       # follow this structure for all articles:
   # first article
   - title: "Something Something"
-    author: 
+    authors: 
       - "Name Surname" # first author 
-      - "Florian Cramer" # second author
+      - "Florian Cramer" # second author 
     docx: "test.docx" 
   # second article
   - title: "Huckle Berry Fin"
-    author: 
+    authors: 
       - "Mark Twain" 

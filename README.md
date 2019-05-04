@@ -13,3 +13,24 @@ To convert the .docx files in the docx/ folder to either html or icml:
 
 * ask for help `./convert.py --help`
 
+
+```
+FOLDER STRUCTURE
+├─ convert.py
+├─ createhtml.py
+├── docx (source texts: docx)
+│   └──  ....
+├── html (converted html)
+│   └── ...
+├── icml (converted icml)
+├─ publication_metadata.yaml
+├── README.md
+├─ readyaml.py
+├── website (website content + structure)
+│   └── ...
+└── website-templates
+    ├── base.html
+    ├── contentpage.html
+    ├── menu.html
+    └── style.css
+```
