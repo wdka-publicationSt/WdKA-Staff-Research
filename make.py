@@ -32,14 +32,6 @@ def ls_dir(d):
     return visible_files
 
 
-# def convert_file(input_file, output_file, in_format, out_format):
-#     pandoc_output = pandoc_convert(_from=in_format,
-#                                    _to=out_format,
-#                                    inputfile=input_file,
-#                                    outputfile=output_file)
-#     print(pandoc_output)
-
-
 def TOC_populate(metadata_dict):
     for text_entry in metadata_dict['TOC']:
         try:
@@ -62,14 +54,15 @@ if args.output == 'website':
 
     env = jinja_env(dir_parent + '/website-templates')
     TOC_populate(metadata)
+
+    # create website's text_entries
     for text_entry in metadata['TOC']:
         # pprint(text_entry)
-        print("{} >>>>> {}".format(text_entry['docx'], text_entry['html']),
-              "\n")
+        print("{} >> {}".format(text_entry['docx'], text_entry['html']), "\n")
+
         text_entry_content = pandoc_convert(inputfile=text_entry['docx'],
                                             _from='docx',
                                             _to='html')
-
         webpage = jinja_render_template(
             env=env,
             tmpl_file='contentpage.html',
@@ -83,21 +76,15 @@ if args.output == 'website':
             webpagefile.write(webpage)
         # print(webpage)
 
-        
-    # # TODO: include template vars mytitle=metadata['Title'], TOC=metadata['TOC'], content="testing",
-
-    # use metadata['TOC'] to order publication
-
-    # index = jinja_render_template(env=env,
-    #                              tmpl_file='contentpage.html',
-    #                              title=metadata['Title'],
-    #                              TOC=metadata['TOC'],
-    #                              content='index'
-    #                              )
-
-    # print(env, index)
-
-
+    # create index
+    webpage_idex = jinja_render_template(
+        env=env,
+        tmpl_file='contentpage.html',
+        title=metadata['Title'],
+        TOC=metadata['TOC'],  # used in menu
+        content=''
+        # TODO: add authors
+    )
 
 elif args.output == 'html':
     print('Making {}'.format(args.output))

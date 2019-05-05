@@ -5,16 +5,19 @@ import subprocess
 import shlex
 from argparse import ArgumentParser
 
-
 def pandoc_convert(_from, _to, inputfile):
-    pandoc_cmd = 'pandoc {input} --from {form} --to {to}'.format(
+    tmpfile = os.path.abspath('./.content') # path of tempfile
+    open(tmpfile, 'a').close() # write empty tempfile to disk
+    pandoc_cmd = 'pandoc {input} -f {form} -t {to} -o {output}'.format(
         form=_from,
         to=_to,
-        input=inputfile)
-
+        input=inputfile,
+        output=tmpfile)
     pandoc_cmd_list = shlex.split(pandoc_cmd)
     try:
-        output = subprocess.check_output(pandoc_cmd_list)
+        subprocess.call(pandoc_cmd_list)
+        with open(tmpfile, 'r') as tempfile_r:
+            output = tempfile_r.read()
         return(output)
     except Exception as e:
         print('Error with {} while converting {}'.format(e, inputfile))
