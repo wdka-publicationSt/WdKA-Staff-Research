@@ -1,16 +1,18 @@
 {# macro for website menu #}
 
 {% macro menu(TOC) %}
-	<ul class="menu">
+	<ol class="menu">
 	{% for item in TOC  %}
 	     <li class="menuitem"
 	     	 id="text_{{ item.title|replace(' ','_')|lower }}">
 	     	<span class="menuitem title"> 
-	     		<a href="" class="menuitem title">
+	     		<a href="{{ item.html.split('/')[-1] }}" class="menuitem title">
 	     		{{ item.title }}
 		     	</a> 
 	     	</span>
-	     	<span class="menuitem authors">By:{{" "}}
+	     	{% if item.authors %}
+	     	<span class="menuitem authors">
+	     		By:{{" "}}
 	     		{%- for author in item.authors -%}
 					{{ author }}
 	     			{%- if author == item.authors|last -%}
@@ -20,7 +22,8 @@
 	     			{%- endif -%} 
 	     		{%- endfor -%}
 	     	</span>
+	     	{% endif %}
 	     </li>
 	{% endfor %}
-	</ul>
+	</ol>
 {% endmacro %}

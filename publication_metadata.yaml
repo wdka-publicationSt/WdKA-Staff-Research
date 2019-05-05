@@ -2,18 +2,18 @@ Title: "WdKA Research Publication"
 Date: "2019"
 Publiser: "WdKA"
 Design: "Myrna de Bruijn"
-TOC:  # TABLE OF CONTENTS
+TOC:
       # follow this structure for all articles:
-  - title: "Index" 
+  - title: "Preface" 
     docx: "index.docx" 
   # first article
-  - title: "Something Something"
+  - title: "CHAPTER I"
     authors: 
       - "Name Surname" # first author 
       - "Florian Cramer" # second author 
     docx: "test.docx" 
   # second article
-  - title: "Huckle Berry Fin"
+  - title: "CHAPTER II"
     authors: 
       - "Mark Twain" 
     docx: "test2.docx"

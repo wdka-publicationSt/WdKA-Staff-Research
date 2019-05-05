@@ -8,21 +8,12 @@ from pprint import pprint
 
 
 # ### Script generates webpages:
-# * index.html
-# * texts present in publication_metadata.yaml
+# * texts entries present in publication_metadata.yaml
 # 
 # ### templates in website-templates/ #####
 # * base.html
 # * contentpage.html
 # * menu.html
-
-"""
-# #######TODO:####### 
-* integrate css
-# PAGES GENERATED
-* one page per .docx
-"""
-
 
 
 def jinja_env(tmpl_dir):
@@ -38,14 +29,6 @@ def jinja_render_template(env, tmpl_file, title, TOC, content):
                               TOC=TOC,
                               content=content,)
     return(tmpl_render)
-# print(tmpl_render)
-
-
-# # # save
-# with open("website/index.html", "w") as index:
-#   index.write(tmpl_render)
-
-
 
 
 

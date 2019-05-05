@@ -3,4 +3,5 @@
 icml/*
 html/*
 website/*
+!website/style.css
 __pycache__/*

@@ -5,9 +5,10 @@ import subprocess
 import shlex
 from argparse import ArgumentParser
 
+
 def pandoc_convert(_from, _to, inputfile):
-    tmpfile = os.path.abspath('./.content') # path of tempfile
-    open(tmpfile, 'a').close() # write empty tempfile to disk
+    tmpfile = os.path.abspath('./.content')  # path of tempfile
+    open(tmpfile, 'a').close()  # write empty tempfile to disk
     pandoc_cmd = 'pandoc {input} -f {form} -t {to} -o {output}'.format(
         form=_from,
         to=_to,
@@ -50,7 +51,6 @@ if __name__ == '__main__':
     def ls_dir(d):
         visible_files = [f for f in os.listdir(d) if f[0] is not '.']
         return visible_files
-
 
     for input_file in ls_dir(formats['docx']['dir']):
         output_file = "{}/{}".format(formats[args.to]['dir'],
