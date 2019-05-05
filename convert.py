@@ -6,19 +6,18 @@ import shlex
 from argparse import ArgumentParser
 
 
-def pandoc_convert(_from, _to, inputfile, outputfile):
-    pandoc_cmd = 'pandoc {input} --from {form} --to {to} \
-        --output {output}'.format(form=_from,
-                                  to=_to,
-                                  input=inputfile,
-                                  output=outputfile)
+def pandoc_convert(_from, _to, inputfile):
+    pandoc_cmd = 'pandoc {input} --from {form} --to {to}'.format(
+        form=_from,
+        to=_to,
+        input=inputfile)
 
     pandoc_cmd_list = shlex.split(pandoc_cmd)
     try:
-        subprocess.call(pandoc_cmd_list)
-        return("Successful pandoc output: {}".format(outputfile))
+        output = subprocess.check_output(pandoc_cmd_list)
+        return(output)
     except Exception as e:
-        print('Error with {} while converting {}'.format(e, outputfile))
+        print('Error with {} while converting {}'.format(e, inputfile))
         sys.exit(1)
 
 

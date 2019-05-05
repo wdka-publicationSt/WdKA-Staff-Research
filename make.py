@@ -32,28 +32,19 @@ def ls_dir(d):
     return visible_files
 
 
-def convert_files(input_format_dict, output_format_dict):
-    in_dir = input_format_dict['dir']
-    in_format = input_format_dict['format']
-    out_dir = output_format_dict['dir']
-    out_format = output_format_dict['format']
-    for input_file in ls_dir(in_dir):
-        output_file = "{}/{}".format(out_dir,
-                                     input_file.replace(in_format, out_format))
-        input_file = "{}/{}".format(in_dir, input_file)
-
-        pandoc_output = pandoc_convert(_from=in_format,
-                                       _to=out_format,
-                                       inputfile=input_file,
-                                       outputfile=output_file)
-        print(pandoc_output)
+# def convert_file(input_file, output_file, in_format, out_format):
+#     pandoc_output = pandoc_convert(_from=in_format,
+#                                    _to=out_format,
+#                                    inputfile=input_file,
+#                                    outputfile=output_file)
+#     print(pandoc_output)
 
 
 def TOC_populate(metadata_dict):
     for text_entry in metadata_dict['TOC']:
         try:
             docx = dir_parent + '/docx/' + text_entry['docx']
-            html = dir_parent + '/html/' + docx.replace('.docx', '.html')
+            html = docx.replace('/docx/', '/html/').replace('.docx', '.html')
             # for text entry in TOC
             # add full path of html and docx files
             text_entry['html'] = html
@@ -68,18 +59,43 @@ def TOC_populate(metadata_dict):
 
 if args.output == 'website':
     print('Making {}'.format(args.output))
-    convert_files(input_format_dict=metadata['Formats']['docx'],
-                  output_format_dict=metadata['Formats']['html'])
-    TOC_populate(metadata)
-    env = jinja_env(dir_parent + '/website-templates')
 
-    # TODO: include template vars mytitle=metadata['Title'], TOC=metadata['TOC'], content="testing",
+    env = jinja_env(dir_parent + '/website-templates')
+    TOC_populate(metadata)
+    for text_entry in metadata['TOC']:
+        # pprint(text_entry)
+        print("{} >>>>> {}".format(text_entry['docx'], text_entry['html']),
+              "\n")
+        text_entry_content = pandoc_convert(inputfile=text_entry['docx'],
+                                            _from='docx',
+                                            _to='html')
+
+        webpage = jinja_render_template(
+            env=env,
+            tmpl_file='contentpage.html',
+            title=text_entry['title'],
+            TOC=metadata['TOC'],  # used in menu
+            content=text_entry_content
+            # TODO: add authors
+        )
+        filename = (text_entry['html'].replace('/html/', '/website/'))
+        with open(filename, 'w') as webpagefile:
+            webpagefile.write(webpage)
+        # print(webpage)
+
+        
+    # # TODO: include template vars mytitle=metadata['Title'], TOC=metadata['TOC'], content="testing",
 
     # use metadata['TOC'] to order publication
 
-    page=jinja_render_template(env=env,
-                          tmpl_file='contentpage.html')
-    print(env, page)
+    # index = jinja_render_template(env=env,
+    #                              tmpl_file='contentpage.html',
+    #                              title=metadata['Title'],
+    #                              TOC=metadata['TOC'],
+    #                              content='index'
+    #                              )
+
+    # print(env, index)
 
 
 

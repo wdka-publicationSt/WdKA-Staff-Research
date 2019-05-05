@@ -31,11 +31,12 @@ def jinja_env(tmpl_dir):
     env.loader = FileSystemLoader(tmpl_dir)
     return env
 
-def jinja_render_template(env, tmpl_file):
+
+def jinja_render_template(env, tmpl_file, title, TOC, content):
     tmpl = env.get_template(tmpl_file)
-    tmpl_render = tmpl.render(mytitle=metadata['Title'],
-                              TOC=metadata['TOC'],
-                              content="testing",)
+    tmpl_render = tmpl.render(mytitle=title,
+                              TOC=TOC,
+                              content=content,)
     return(tmpl_render)
 # print(tmpl_render)
 

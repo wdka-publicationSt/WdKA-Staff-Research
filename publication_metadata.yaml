@@ -4,6 +4,8 @@ Publiser: "WdKA"
 Design: "Myrna de Bruijn"
 TOC:  # TABLE OF CONTENTS
       # follow this structure for all articles:
+  - title: "Index" 
+    docx: "index.docx" 
   # first article
   - title: "Something Something"
     authors: 
@@ -14,16 +16,16 @@ TOC:  # TABLE OF CONTENTS
   - title: "Huckle Berry Fin"
     authors: 
       - "Mark Twain" 
-    docx: "test1.docx"
+    docx: "test2.docx"
 
 ### 
 Formats:
   docx: 
-    dir: "docx"
+    dir: "docx/"
     format: "docx"
   html:
-    dir: "html"
+    dir: "html/"
     format: "html"
   icml:
-    dir: "icml"
+    dir: "icml/"
     format: "icml"
