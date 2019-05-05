@@ -17,15 +17,3 @@ TOC:  # TABLE OF CONTENTS
     authors: 
       - "Mark Twain" 
     docx: "test2.docx"
-
-### 
-Formats:
-  docx: 
-    dir: "docx/"
-    format: "docx"
-  html:
-    dir: "html/"
-    format: "html"
-  icml:
-    dir: "icml/"
-    format: "icml"

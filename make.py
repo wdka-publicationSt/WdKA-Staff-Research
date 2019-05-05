@@ -5,8 +5,10 @@ from argparse import ArgumentParser
 from pprint import pprint
 from convert import pandoc_convert
 from readyaml import readyaml
+from readyaml import TOC_populate
 from createwebsite import jinja_env
 from createwebsite import jinja_render_template
+
 
 parser = ArgumentParser(prog=sys.argv[0],
                         usage='%(prog)s  output',
@@ -24,32 +26,8 @@ dir_parent_ls = os.listdir(dir_parent)
 
 # metadata of publication from YAML file
 metadata = readyaml(dir_parent + '/' + 'publication_metadata.yaml')
+metadata = TOC_populate(dir_parent, metadata)  # add full path dirs to TOC
 pprint(metadata)
-
-
-def ls_dir(d):
-    visible_files = [f for f in os.listdir(d) if f[0] is not '.']
-    return visible_files
-
-
-def TOC_populate(metadata_dict):
-    for text_entry in metadata_dict['TOC']:
-        try:
-            docx = dir_parent + '/docx/' + text_entry['docx']
-            html = docx.replace('/docx/', '/html/').replace('.docx', '.html')
-            icml = docx.replace('/docx/', '/icml/').replace('.docx', '.icml')
-            # for text entry in TOC
-            # add full path of html, icml, docx files
-            text_entry['html'] = html
-            text_entry['docx'] = docx
-            text_entry['icml'] = icml
-        except Exception as e:
-            print('Error with {} in {}'.format(e, text_entry))
-            sys.exit(1)
-        print(text_entry)
-
-
-TOC_populate(metadata)
 
 if args.output == 'website':
     print('Making {}'.format(args.output))
