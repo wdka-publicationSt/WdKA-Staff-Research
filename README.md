@@ -8,10 +8,10 @@ To convert the .docx files in the docx/ folder to either html or icml:
 * open terminal
 * write `cd ` and drag-and-drop this folder into it.
 
-* run `./convert.py --to html` for html output
-* run `./convert.py --to icml` for icml output
+* run `./make.py html` for html output
+* run `./make.py --to icml` for icml output
+* run `./make.py --to website` for website output
 
-* ask for help `./convert.py --help`
 
 
 ```

@@ -37,24 +37,23 @@ def TOC_populate(metadata_dict):
         try:
             docx = dir_parent + '/docx/' + text_entry['docx']
             html = docx.replace('/docx/', '/html/').replace('.docx', '.html')
+            icml = docx.replace('/docx/', '/icml/').replace('.docx', '.icml')
             # for text entry in TOC
-            # add full path of html and docx files
+            # add full path of html, icml, docx files
             text_entry['html'] = html
             text_entry['docx'] = docx
-            print(text_entry)
-
+            text_entry['icml'] = icml
         except Exception as e:
             print('Error with {} in {}'.format(e, text_entry))
             sys.exit(1)
         print(text_entry)
 
 
+TOC_populate(metadata)
+
 if args.output == 'website':
     print('Making {}'.format(args.output))
-
     env = jinja_env(dir_parent + '/website-templates')
-    TOC_populate(metadata)
-
     # create website's text_entries
     for text_entry in metadata['TOC']:
         # pprint(text_entry)
@@ -75,7 +74,6 @@ if args.output == 'website':
         with open(filename, 'w') as webpagefile:
             webpagefile.write(webpage)
         # print(webpage)
-
     # create index
     webpage_idex = jinja_render_template(
         env=env,
@@ -88,9 +86,20 @@ if args.output == 'website':
 
 elif args.output == 'html':
     print('Making {}'.format(args.output))
-    convert_files(input_format_dict=metadata['Formats']['docx'],
-                  output_format_dict=metadata['Formats']['html'])
+    for text_entry in metadata['TOC']:
+        print("{} >> {}".format(text_entry['docx'], text_entry['html']), "\n")
+        text_entry_content = pandoc_convert(inputfile=text_entry['docx'],
+                                            _from='docx',
+                                            _to='html')
+        with open(text_entry['html'], 'w') as htmlfile:
+            htmlfile.write(text_entry_content)
+
 elif args.output == 'icml':
     print('Making {}'.format(args.output))
-    convert_files(input_format_dict=metadata['Formats']['docx'],
-                  output_format_dict=metadata['Formats']['icml'])
+    for text_entry in metadata['TOC']:
+        print("{} >> {}".format(text_entry['docx'], text_entry['icml']), "\n")
+        text_entry_content = pandoc_convert(inputfile=text_entry['docx'],
+                                            _from='docx',
+                                            _to='icml')
+        with open(text_entry['icml'], 'w') as htmlfile:
+            htmlfile.write(text_entry_content)
