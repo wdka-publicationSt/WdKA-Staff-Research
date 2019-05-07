@@ -1,3 +1,4 @@
+/* menu */
 div.menu { }
 ol.menu {}
 li.menuitem { }
@@ -7,5 +8,7 @@ li.menuitem { margin-bottom: 5px;
 li.menuitem span.title{ }
 li.menuitem span.authors{  background: #f2f2f2; }
 li.menuitem a { 
-				text-decoration: underline
+				text-decoration: underline;
+				color: black;
+
 			}
