@@ -9,8 +9,8 @@ To convert the .docx files in the docx/ folder to either html or icml:
 * write `cd ` and drag-and-drop this folder into it.
 
 * run `./make.py html` for html output
-* run `./make.py --to icml` for icml output
-* run `./make.py --to website` for website output
+* run `./make.py icml` for icml output
+* run `./make.py website` for website output
 
 
 
