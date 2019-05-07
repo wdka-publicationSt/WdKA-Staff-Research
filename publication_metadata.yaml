@@ -1,19 +1,24 @@
 Title: "WdKA Research Publication"
 Date: "2019"
-Publiser: "WdKA"
+Publisher: "WdKA"
 Design: "Myrna de Bruijn"
 TOC:
       # follow this structure for all articles:
-  - title: "Preface" 
+  - title: "Introduction" 
     docx: "index.docx" 
   # first article
   - title: "CHAPTER I"
     authors: 
       - "Name Surname" # first author 
-      - "Florian Cramer" # second author 
+      - "Aldje van de Meer" # second author 
     docx: "test.docx" 
   # second article
   - title: "CHAPTER II"
     authors: 
       - "Mark Twain" 
     docx: "test2.docx"
+  # third article
+  - title: "Art and Design in New Economies: Speculative Scenarios For Real-life Innovations "
+    authors: 
+      - "Deanna Herst" 
+    docx: "DeannaHerst.docx"
