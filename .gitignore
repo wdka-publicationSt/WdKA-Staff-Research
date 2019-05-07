@@ -5,3 +5,4 @@ html/*
 website/*
 !website/style.css
 __pycache__/*
+docx/DeannaHerst.docx
