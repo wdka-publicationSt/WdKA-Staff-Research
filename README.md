@@ -2,8 +2,25 @@
 
 Process page <http://publicationstation.wdka.hro.nl/wiki/index.php/Publisher:WdKA_Staff_Research_Publication>
 
+## Depencies:
+* Pandoc <http://pandoc.org/>
+* Python libraries:
+    - Jinja2
+        + website: http://jinja.pocoo.org/
+        + install: `pip3 install Jinja2`
+    - PyYAML
+        + website: <https://pyyaml.org/wiki/PyYAMLDocumentation>    
+        + install: `pip3 install pyyaml`
+
+## Metadata
+`publication_metadata.yaml` includes 
+* metadata about the publication
+*  Table Of Contents (TOC): 
+
+The information contained in this file is used to generate the structure of the publication and its colophone.
+
 ## conversion
-To convert the .docx files in the docx/ folder to either html or icml:
+To convert the .docx files in the docx/ folder to either html, icml or website:
 
 * open terminal
 * write `cd ` and drag-and-drop this folder into it.
