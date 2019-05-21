@@ -8,7 +8,7 @@ from readyaml import readyaml
 from readyaml import TOC_populate
 from createwebsite import jinja_env
 from createwebsite import jinja_render_template
-
+from weasyprint import HTML, CSS
 
 parser = ArgumentParser(prog=sys.argv[0],
                         usage='%(prog)s  output',
@@ -44,8 +44,38 @@ def convert_loop(TOC, _from, _to):
         with open(text_entry[_to], 'w') as outfile:
             outfile.write(text_entry_content)
 
+if args.output == 'pdf':
+    print('Making {}'.format(args.output))
+    convert_loop(TOC=metadata['TOC'],
+                 _from='docx',
+                 _to='html')
+    html_all = ''
+    for text_entry in metadata['TOC']:
+        print(text_entry['html'])
+        with open(text_entry['html'], 'r') as html_file:
+            html_text = html_file.read()
+            # assemble all HTML files content
+            # onto a single variable
+            html_all += html_text
+    # write content of html_all into tmp file
+    with open(dir_parent + '/' + 'all.html', 'w') as html_all_file:
+        html_all_file.write(html_all)
 
-if args.output == 'website':
+    HTML(filename=dir_parent + '/' + 'all.html').write_pdf(
+        dir_parent + '/pdf/' + 'publication.pdf',
+        stylesheets=[CSS(filename=dir_parent + '/pdf/' + 'style.pdf.css')
+                     ])
+
+
+        # TODO: remove tmp file
+        # TODO: define PDF directory
+
+
+
+
+            # generate the PDF from the HTML content
+
+elif args.output == 'website':
     print('Making {}'.format(args.output))
     env = jinja_env(dir_parent + '/website-templates')
     # create website's text_entries
@@ -64,6 +94,7 @@ if args.output == 'website':
             TOC=metadata['TOC'],  # used in menu
             content=html_text
             # TODO: add authors
+            # TODO rm contentpage.html
         )
         filename = (text_entry['html'].replace('/html/', '/website/'))
         with open(filename, 'w') as webpagefile:

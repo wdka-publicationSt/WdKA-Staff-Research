@@ -6,3 +6,5 @@ website/*
 !website/style.css
 __pycache__/*
 docx/DeannaHerst.docx
+pdf/*
+!pdf/style.pdf.css
