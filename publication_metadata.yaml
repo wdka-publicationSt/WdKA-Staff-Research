@@ -22,3 +22,8 @@ TOC:
     authors: 
       - "Deanna Herst" 
     docx: "DeannaHerst.docx"
+  # forth article
+  - title: "Testennnnn"
+    authors: 
+      - "Myrna de Bruijn" 
+    docx: "teststyles.docx"
