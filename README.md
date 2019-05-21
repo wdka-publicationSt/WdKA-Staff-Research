@@ -29,11 +29,12 @@ To convert the .docx files in the docx/ folder to either html, icml or website:
 * run `./make.py icml` for icml output
 * run `./make.py website` for website output
     - website styling is defined in: `website/style.css` as its stylesheet
+    - resulting website will be saved in folder `website/` 
 
 * run `./make.py pdf` for PDF output
-    - PDF styling is defined in: `pdf/style.pdf.css` as its stylesheet
+    - PDF styling is defined in: `pdf/style.pdf.css` as CSS
     - errors found while generating the pdf are stored in `pdf/weasyprint.log`
-    
+    - resulting pdf will be saved in `pdf/publication.pdf`
 
 
 

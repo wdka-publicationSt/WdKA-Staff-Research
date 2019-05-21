@@ -111,7 +111,8 @@ elif args.output == 'website':
             tmpl_file='contentpage.html',
             title=text_entry['title'],
             TOC=metadata['TOC'],  # used in menu
-            content=html_text
+            content=html_text,
+            css=True,
             # TODO: add authors
             # TODO rm contentpage.html
         )
