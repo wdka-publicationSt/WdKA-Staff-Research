@@ -28,6 +28,11 @@ To convert the .docx files in the docx/ folder to either html, icml or website:
 * run `./make.py html` for html output
 * run `./make.py icml` for icml output
 * run `./make.py website` for website output
+    - website styling is defined in: `website/style.css` as its stylesheet
+
+* run `./make.py pdf` for PDF output
+    - PDF styling is defined in: `pdf/style.pdf.css` as its stylesheet
+    
 
 
 

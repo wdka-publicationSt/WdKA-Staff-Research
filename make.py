@@ -49,10 +49,17 @@ def convert_loop(TOC, _from, _to):
 
 if args.output == 'pdf':
     print('Making {}'.format(args.output))
+    pdfdir = dir_parent + '/pdf/'
+    pdfcss = pdfdir + 'style.pdf.css'
+    tmp_html_pdf = pdfdir + '.all.html'
+    pdffile = pdfdir + 'publication.pdf'
+
     convert_loop(TOC=metadata['TOC'],
                  _from='docx',
                  _to='html')
+
     html_all = ''
+
     for text_entry in metadata['TOC']:
         print(text_entry['html'])
         with open(text_entry['html'], 'r') as html_file:
@@ -61,28 +68,19 @@ if args.output == 'pdf':
             # onto a single variable
             html_all += html_text
     # write content of html_all into tmp file
-    with open(dir_parent + '/' + 'all.html', 'w') as html_all_file:
-        html_all_file.write(html_all)
+    with open(tmp_html_pdf, 'w') as html_tmp:
+        html_tmp.write(html_all)
 
-    logger = logging.getLogger('weasyprint')
-    logger.addHandler(logging.FileHandler(dir_parent + '/pdf/' +
-                                          'weasyprint.log'))
-    HTML(filename=dir_parent + '/' + 'all.html').write_pdf(
-        dir_parent + '/pdf/' + 'publication.pdf',
-        stylesheets=[CSS(filename=dir_parent + '/pdf/' + 'style.pdf.css')
-                     ])
+    # TODO LOGGING
+    # logger = logging.FileHandler('weasyprint')
+    # logger.addHandler(logging.FileHandler(dir_parent + '/pdf/' +
+    #                                       'weasyprint.log'))
 
-
-        # TODO: remove tmp file
-        # TODO: define PDF directory
-
-        # LOG
-
-
-
-
-            # generate the PDF from the HTML content
-
+    # generate the PDF from the HTML content
+    HTML(filename=tmp_html_pdf).write_pdf(pdffile,
+                                          stylesheets=[CSS(filename=pdfcss)
+                                                       ]
+                                          )
 elif args.output == 'website':
     print('Making {}'.format(args.output))
     env = jinja_env(dir_parent + '/website-templates')
