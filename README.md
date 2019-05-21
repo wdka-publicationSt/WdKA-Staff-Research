@@ -37,6 +37,10 @@ To convert the .docx files in the docx/ folder to either html, icml or website:
     - resulting pdf will be saved in `pdf/publication.pdf`
 
 
+## On CSS for print
+[W3C page on CSS Paged Media](https://www.w3.org/TR/css-page-3/) describest in detail: *how pages are generated and laid out to hold fragmented content in a paged presentation*, such as page margins, page size and orientation, headers and footers, page numbering and running headers / footers.
+
+[W3C page on CSS Fragmentation Module](https://www.w3.org/TR/css-break-3/#breaking-controls) explains in detail how page breaks are controlled in CSS.
 
 ```
 FOLDER STRUCTURE
