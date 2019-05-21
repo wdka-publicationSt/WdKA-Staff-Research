@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import sys
 import os
+import logging
 from argparse import ArgumentParser
 from pprint import pprint
 from convert import pandoc_convert
@@ -9,6 +10,7 @@ from readyaml import TOC_populate
 from createwebsite import jinja_env
 from createwebsite import jinja_render_template
 from weasyprint import HTML, CSS
+
 
 parser = ArgumentParser(prog=sys.argv[0],
                         usage='%(prog)s  output',
@@ -44,6 +46,7 @@ def convert_loop(TOC, _from, _to):
         with open(text_entry[_to], 'w') as outfile:
             outfile.write(text_entry_content)
 
+
 if args.output == 'pdf':
     print('Making {}'.format(args.output))
     convert_loop(TOC=metadata['TOC'],
@@ -61,6 +64,9 @@ if args.output == 'pdf':
     with open(dir_parent + '/' + 'all.html', 'w') as html_all_file:
         html_all_file.write(html_all)
 
+    logger = logging.getLogger('weasyprint')
+    logger.addHandler(logging.FileHandler(dir_parent + '/pdf/' +
+                                          'weasyprint.log'))
     HTML(filename=dir_parent + '/' + 'all.html').write_pdf(
         dir_parent + '/pdf/' + 'publication.pdf',
         stylesheets=[CSS(filename=dir_parent + '/pdf/' + 'style.pdf.css')
@@ -69,6 +75,8 @@ if args.output == 'pdf':
 
         # TODO: remove tmp file
         # TODO: define PDF directory
+
+        # LOG
 
 
 
