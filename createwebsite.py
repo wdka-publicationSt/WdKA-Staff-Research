@@ -23,7 +23,7 @@ def jinja_env(tmpl_dir):
     return env
 
 
-def jinja_render_template(env, tmpl_file, title, TOC, content):
+def jinja_render_template(env, tmpl_file, title, content, TOC=''):
     tmpl = env.get_template(tmpl_file)
     tmpl_render = tmpl.render(mytitle=title,
                               TOC=TOC,

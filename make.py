@@ -26,6 +26,9 @@ args = parser.parse_args()
 dir_parent = os.path.dirname((os.path.abspath(__file__)))
 dir_parent_ls = os.listdir(dir_parent)
 
+# templates enviroment
+env = jinja_env(dir_parent + '/website-templates')
+
 # metadata of publication from YAML file
 metadata = readyaml(dir_parent + '/' + 'publication_metadata.yaml')
 metadata = TOC_populate(dir_parent, metadata)  # add full path dirs to TOC
@@ -65,11 +68,20 @@ if args.output == 'pdf':
         with open(text_entry['html'], 'r') as html_file:
             html_text = html_file.read()
             # assemble all HTML files content
-            # onto a single variable
+            # onto a single variable html_all
             html_all += html_text
+
+    # place html_all to HTML template 
+    htlm_head_body = jinja_render_template(
+        env=env,
+        tmpl_file='contentpage.html',
+        title=metadata['Title'],
+        content=html_all
+    )
+
     # write content of html_all into tmp file
     with open(tmp_html_pdf, 'w') as html_tmp:
-        html_tmp.write(html_all)
+        html_tmp.write(htlm_head_body)
 
     # TODO LOGGING
     # logger = logging.FileHandler('weasyprint')
