@@ -54,7 +54,7 @@ if args.output == 'pdf':
     print('Making {}'.format(args.output))
     pdfdir = dir_parent + '/pdf/'
     pdfcss = pdfdir + 'style.pdf.css'
-    tmp_html_pdf = pdfdir + '.all.html'
+    tmp_html_pdf = pdfdir + 'allcontent.html'
     pdffile = pdfdir + 'publication.pdf'
 
     convert_loop(TOC=metadata['TOC'],
@@ -71,7 +71,7 @@ if args.output == 'pdf':
             # onto a single variable html_all
             html_all += html_text
 
-    # place html_all to HTML template 
+    # place html_all to HTML template
     htlm_head_body = jinja_render_template(
         env=env,
         tmpl_file='contentpage.html',
@@ -83,10 +83,11 @@ if args.output == 'pdf':
     with open(tmp_html_pdf, 'w') as html_tmp:
         html_tmp.write(htlm_head_body)
 
-    # TODO LOGGING
-    # logger = logging.FileHandler('weasyprint')
-    # logger.addHandler(logging.FileHandler(dir_parent + '/pdf/' +
-    #                                       'weasyprint.log'))
+    # LOG Weasyprint errors
+    logger = logging.getLogger('weasyprint')
+    logger.addHandler(logging.FileHandler(
+        (dir_parent + '/pdf/' + 'weasyprint.log'), mode='w'
+    ))
 
     # generate the PDF from the HTML content
     HTML(filename=tmp_html_pdf).write_pdf(pdffile,

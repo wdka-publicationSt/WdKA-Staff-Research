@@ -32,6 +32,7 @@ To convert the .docx files in the docx/ folder to either html, icml or website:
 
 * run `./make.py pdf` for PDF output
     - PDF styling is defined in: `pdf/style.pdf.css` as its stylesheet
+    - errors found while generating the pdf are stored in `pdf/weasyprint.log`
     
 
 
