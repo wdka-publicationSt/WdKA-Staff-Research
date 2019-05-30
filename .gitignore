@@ -6,6 +6,7 @@ html/*
 website/*
 !website/style.css
 __pycache__/*
+docx/*
 docx/DeannaHerst.docx
 docx/AldjevanMeer.docx
 pdf/*
