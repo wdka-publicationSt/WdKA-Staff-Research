@@ -1,10 +1,12 @@
 ~$*
 .content
+all.html
 icml/*
 html/*
 website/*
 !website/style.css
 __pycache__/*
 docx/DeannaHerst.docx
+docx/AldjevanMeer.docx
 pdf/*
 !pdf/style.pdf.css
