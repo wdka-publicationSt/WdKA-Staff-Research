@@ -11,3 +11,4 @@ docx/DeannaHerst.docx
 docx/AldjevanMeer.docx
 pdf/*
 !pdf/style.pdf.css
+.DS_Store
