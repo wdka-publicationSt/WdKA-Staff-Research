@@ -1,7 +1,7 @@
 {# macro for website menu #}
 
 {% macro menu(TOC) %}
-	<ol class="menu">
+	<ul class="menu">
 	{% for item in TOC  %}
 	     <li class="menuitem"
 	     	 id="text_{{ item.title|replace(' ','_')|lower }}">
@@ -25,5 +25,5 @@
 	     	{% endif %}
 	     </li>
 	{% endfor %}
-	</ol>
+	</uSl>
 {% endmacro %}
