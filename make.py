@@ -26,6 +26,9 @@ args = parser.parse_args()
 dir_parent = os.path.dirname((os.path.abspath(__file__)))
 dir_parent_ls = os.listdir(dir_parent)
 
+# templates enviroment
+env = jinja_env(dir_parent + '/website-templates')
+
 # metadata of publication from YAML file
 metadata = readyaml(dir_parent + '/' + 'publication_metadata.yaml')
 metadata = TOC_populate(dir_parent, metadata)  # add full path dirs to TOC
@@ -49,40 +52,48 @@ def convert_loop(TOC, _from, _to):
 
 if args.output == 'pdf':
     print('Making {}'.format(args.output))
+    pdfdir = dir_parent + '/pdf/'
+    pdfcss = pdfdir + 'style.pdf.css'
+    tmp_html_pdf = pdfdir + 'allcontent.html'
+    pdffile = pdfdir + 'publication.pdf'
+
     convert_loop(TOC=metadata['TOC'],
                  _from='docx',
                  _to='html')
+
     html_all = ''
+
     for text_entry in metadata['TOC']:
         print(text_entry['html'])
         with open(text_entry['html'], 'r') as html_file:
             html_text = html_file.read()
             # assemble all HTML files content
-            # onto a single variable
+            # onto a single variable html_all
             html_all += html_text
+
+    # place html_all to HTML template
+    htlm_head_body = jinja_render_template(
+        env=env,
+        tmpl_file='contentpage.html',
+        title=metadata['Title'],
+        content=html_all
+    )
+
     # write content of html_all into tmp file
-    with open(dir_parent + '/' + 'all.html', 'w') as html_all_file:
-        html_all_file.write(html_all)
+    with open(tmp_html_pdf, 'w') as html_tmp:
+        html_tmp.write(htlm_head_body)
 
+    # LOG Weasyprint errors
     logger = logging.getLogger('weasyprint')
-    logger.addHandler(logging.FileHandler(dir_parent + '/pdf/' +
-                                          'weasyprint.log'))
-    HTML(filename=dir_parent + '/' + 'all.html').write_pdf(
-        dir_parent + '/pdf/' + 'publication.pdf',
-        stylesheets=[CSS(filename=dir_parent + '/pdf/' + 'style.pdf.css')
-                     ])
+    logger.addHandler(logging.FileHandler(
+        (dir_parent + '/pdf/' + 'weasyprint.log'), mode='w'
+    ))
 
-
-        # TODO: remove tmp file
-        # TODO: define PDF directory
-
-        # LOG
-
-
-
-
-            # generate the PDF from the HTML content
-
+    # generate the PDF from the HTML content
+    HTML(filename=tmp_html_pdf).write_pdf(pdffile,
+                                          stylesheets=[CSS(filename=pdfcss)
+                                                       ]
+                                          )
 elif args.output == 'website':
     print('Making {}'.format(args.output))
     env = jinja_env(dir_parent + '/website-templates')
@@ -100,7 +111,8 @@ elif args.output == 'website':
             tmpl_file='contentpage.html',
             title=text_entry['title'],
             TOC=metadata['TOC'],  # used in menu
-            content=html_text
+            content=html_text,
+            css=True,
             # TODO: add authors
             # TODO rm contentpage.html
         )

@@ -4,10 +4,11 @@
 {% block title %}{{ mytitle }}{% endblock %}
 
 {% block content %} 
+	{% if TOC %}
 	<div class="menu">
 	{{ menu(TOC) }}
 	</div>
-
+	{% endif %}
 
     <div id="content">
 		{{ content }}
