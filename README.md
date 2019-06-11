@@ -62,3 +62,24 @@ FOLDER STRUCTURE
     ├── menu.html
     └── style.css
 ```
+
+## On images on docx
+Because when the images in a docx file are converted by Pandoc they are given a default source and loose their descriptions we devised a different strategies for including images in a word document.
+
+In the word document you include the image as a reference using the follwoing syntax:
+`![figure caption](image path)`
+
+As for instance:
+`![BluecityLab - Intern Lieke van der Maas working with Kombucha http://www.bluecitylab.nl/](images/AldjevanMeer/bluecitylab.png)`
+
+Ensure that:
+* **there is no formatting on that line of text**
+* **it is seperate from other text lines with a empty line before and after**
+
+The result, when converted to an HTML will be:
+```html
+<figure>
+    <img src="../images/AldjevanMeer/bluecitylab.png">                  
+    <figcaption>BluecityLab - Intern Lieke van der Maas working with Kombucha<a href="http://www.bluecitylab.nl/"><span class="underline">http://www.bluecitylab.nl</span></a>/</figcaption>
+</figure>
+```
