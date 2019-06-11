@@ -2,6 +2,7 @@
 import sys
 import os
 import logging
+import re
 from argparse import ArgumentParser
 from pprint import pprint
 from convert import pandoc_convert
@@ -34,6 +35,25 @@ metadata = readyaml(dir_parent + '/' + 'publication_metadata.yaml')
 metadata = TOC_populate(dir_parent, metadata)  # add full path dirs to TOC
 pprint(metadata)
 
+def img_ref2figure(html):
+    '''
+    function replaces the reference to an image in the text i.e.:
+    <p>![Lieke van der Maas working with Kombucha](images/AldjevanMeer/bluecitylab.png)</p> 
+    to: 
+    <figure>
+        <img src="images/AldjevanMeer/bluecitylab.png">
+        <figcaption>Lieke van der Maas working with Kombucha</figcaption>
+    </figure>
+    '''
+    img_regex = "<p>!\[(?P<caption>.*?)\]\((?P<path>.*?)\)<\/p>"
+    html = re.sub(img_regex,
+                  '<figure>\
+                  <img src="../\g<path>"/>\
+                  <figcaption>\g<caption></figcaption>\
+                  </figure>',
+                  html)
+    return html
+
 
 def convert_loop(TOC, _from, _to):
     '''
@@ -46,6 +66,7 @@ def convert_loop(TOC, _from, _to):
         text_entry_content = pandoc_convert(inputfile=text_entry['docx'],
                                             _from=_from,
                                             _to=_to)
+        text_entry_content = img_ref2figure(text_entry_content)
         with open(text_entry[_to], 'w') as outfile:
             outfile.write(text_entry_content)
 

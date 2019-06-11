@@ -44,3 +44,14 @@ blockquote{
 	background-color: yellow;
 	text-align: right;
 }
+
+figure{	   
+	margin:0px;
+	width: 400px;
+	}
+
+img {width:inherit;}
+
+figcaption {
+    display: inline-block;
+}
