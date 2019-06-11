@@ -55,3 +55,12 @@ img {width:inherit;}
 figcaption {
     display: inline-block;
 }
+
+/* Article specific style */
+
+div#WorkshopofOtherKnowledge p { color:blue;  }
+div#WorkshopofOtherKnowledge a { color:red;  }
+
+
+div#ArtandDesigninNewEconomiesSpeculativeScenariosForReal-lifeInnovations p {color:yellow;}
+div#WorkshopofOtherKnowledge a { color:green;  }

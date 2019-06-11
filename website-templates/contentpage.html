@@ -10,7 +10,13 @@
 	</div>
 	{% endif %}
 
-    <div id="content">
+    <div id="{{ mytitle|replace(' ', '')
+    |replace('.', '')
+    |replace(',', '')
+    |replace('!', '')
+    |replace('?', '')
+    |replace(';', '')
+    |replace(':', '')|escape() }}" class="content">
 		{{ content }}
 	</div>
 {% endblock %}
