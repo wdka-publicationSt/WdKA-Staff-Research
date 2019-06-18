@@ -2,31 +2,57 @@
 div.menu { }
 ol.menu {}
 li.menuitem { }
+
+ul.menu{
+	width: 30%;
+
+  	position: fixed;
+  	text-decoration:none;
+  	top: 20px;
+  	right: 0%;
+  	color: #FEBD84;
+  	background:#003869;
+  	overflow-x: hidden;
+  	padding-top: 5px;
+  	padding-left: 2%;
+  	padding-right: 5px;
+  	padding-bottom: 5px;
+}
+
 li.menuitem { margin-bottom: 5px;
 			  margin-top: 10px;
+			    	color: #FEBD84;
 			list-style-type:none;
  }
-li.menuitem span.title{ }
-li.menuitem span.authors{  background: #f2f2f2; }
+li.menuitem span.title{ #FEBD84;}
+li.menuitem span.authors{  font-size: .8em }
 li.menuitem a { 
-
+				color: #FEBD84;
 				text-decoration: underline, 10px;
-				text-decoration-color: yellow;
-				color: black;
+				text-decoration-color: green;
+
 
 			}
+
+
+
+
 
 @import url('https://fonts.googleapis.com/css?family=Spectral&display=swap');
 
 body{
 	font-family: Spectral;
+	width: 60%
 	margin-top: 10%;
-	margin-left: 20%;
-	margin-right: 20%;
+	margin-left: 10%;
+	margin-right: 35%;
+	background: #FEBD84;
+	color: #003869;
+	
 }
 
 h1{
-	text-shadow: 2px 2px yellow;
+	text-shadow: 2px 2px green;
 	font-size: 250%;
 	line-height: 120%;
 }
@@ -46,7 +72,7 @@ p{
 blockquote{
 	font-size: 8pt;
 	font-style: italic;
-	background-color: yellow;
+	background-color: green;
 	text-align: right;
 }
 
@@ -82,5 +108,5 @@ div#WorkshopofOtherKnowledge p { color:blue;  }
 div#WorkshopofOtherKnowledge a { color:red;  }
 
 
-div#ArtandDesigninNewEconomiesSpeculativeScenariosForReal-lifeInnovations p {color:yellow;}
+div#ArtandDesigninNewEconomiesSpeculativeScenariosForReal-lifeInnovations p {color:green;}
 div#WorkshopofOtherKnowledge a { color:green;  }
