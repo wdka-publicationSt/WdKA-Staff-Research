@@ -23,9 +23,10 @@ def jinja_env(tmpl_dir):
     return env
 
 
-def jinja_render_template(env, tmpl_file, title, content, TOC='', css=False):
+def jinja_render_template(env, tmpl_file, title, content, TOC='', publication_title='', css=False):
     tmpl = env.get_template(tmpl_file)
-    tmpl_render = tmpl.render(mytitle=title,
+    tmpl_render = tmpl.render(publication_title=publication_title,
+                              mytitle=title,
                               TOC=TOC,
                               content=content,
                               css=css)

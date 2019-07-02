@@ -1,6 +1,7 @@
 {# macro for website menu #}
 
-{% macro menu(TOC) %}
+{% macro menu(TOC, publication_title) %}
+	<h1 id='publication_title'>{{ publication_title }}</h1>
 	<ul class="menu">
 	{% for item in TOC  %}
 	     <li class="menuitem"

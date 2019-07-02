@@ -6,7 +6,7 @@
 {% block content %} 
 	{% if TOC %}
 	<div class="menu">
-	{{ menu(TOC) }}
+	{{ menu(TOC, publication_title=publication_title ) }}
 	</div>
 	{% endif %}
 

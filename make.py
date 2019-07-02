@@ -97,7 +97,7 @@ if args.output == 'pdf':
         env=env,
         tmpl_file='contentpage.html',
         title=metadata['Title'],
-        content=html_all
+        content=html_all,
     )
 
     # write content of html_all into tmp file
@@ -134,6 +134,7 @@ elif args.output == 'website':
             TOC=metadata['TOC'],  # used in menu
             content=html_text,
             css=True,
+            publication_title=metadata['Title'],
             # TODO: add authors
             # TODO rm contentpage.html
         )
