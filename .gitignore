@@ -9,6 +9,8 @@ __pycache__/*
 docx/*
 docx/DeannaHerst.docx
 docx/AldjevanMeer.docx
+docx/\.DS_Store
 pdf/*
 !pdf/style.pdf.css
-.DS_Store
+*\.DS_Store*
+sketch*

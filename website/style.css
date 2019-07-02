@@ -1,60 +1,55 @@
 /* menu */
+html{
+	scroll-behavior: smooth;
+}
+
 div.menu { }
 ol.menu {}
 li.menuitem { }
 
 ul.menu{
-	width: 30%;
-
+	top: 0%;
+	width: 25%;
   	position: fixed;
+  	font-family: Merriweather;
   	text-decoration:none;
-  	top: 20px;
-  	right: 0%;
-  	color: #FEBD84;
-  	background:#003869;
+  	left: 0%;
+  	color: #f5aeb3;
+/*  background:#fcedca;*/
   	overflow-x: hidden;
-  	padding-top: 5px;
-  	padding-left: 2%;
-  	padding-right: 5px;
-  	padding-bottom: 5px;
+  	padding-left: 5%;
+  	padding-right: 5%;
 }
 
-li.menuitem { margin-bottom: 5px;
-			  margin-top: 10px;
-			    	color: #FEBD84;
-			list-style-type:none;
+li.menuitem {
+	margin-bottom: 10px;
+	color: #f5aeb3;
+	list-style-type:none;
+
  }
-li.menuitem span.title{ #FEBD84;}
-li.menuitem span.authors{  font-size: .8em }
+li.menuitem span.title{ 
+		color: inherit;
+		list-style-type:none;
+		text-decoration:none;
+}
+li.menuitem span.authors{ display: block; font-size: .8em }
 li.menuitem a { 
-				color: #FEBD84;
-				text-decoration: underline, 10px;
-				text-decoration-color: green;
-
-
-			}
-
-
-
-
+	color: #f5aeb3;
+	list-style-type:none;
+	text-decoration:none;
+}
 
 @import url('https://fonts.googleapis.com/css?family=Spectral&display=swap');
 
 body{
-	font-family: Spectral;
-	width: 60%
-	margin-top: 10%;
-	margin-left: 10%;
-	margin-right: 35%;
-	background: #FEBD84;
-	color: #003869;
-	
+	font-family: Open Sans;
+	padding-right: 10%;
+	padding-left: 35%;
+	color: #fcedca;
 }
 
 h1{
-	text-shadow: 2px 2px green;
 	font-size: 250%;
-	line-height: 120%;
 }
 
 h2{
@@ -72,8 +67,7 @@ p{
 blockquote{
 	font-size: 8pt;
 	font-style: italic;
-	background-color: green;
-	text-align: right;
+	text-align: center;
 }
 
 figure{	   
@@ -81,15 +75,29 @@ figure{
 	width: 400px;
 	}
 
-img {width:inherit;}
+img {width:40%;
+  -webkit-transition: width 2s; /* Safari */
+  transition: width 2s;}
+img:hover{
+	width: 70%;
+
+}
 
 figcaption {
     display: inline-block;
 }
 
+hr{
+	color: #f5aeb3;
+}
+
+#content{
+	width: 60%;
+}
+
 
 [role=doc-endnote]{
-	color: green;
+	color: #f5aeb3;
 }
 
 [role=doc-backlink]{
@@ -104,9 +112,28 @@ figcaption {
 
 /* Article specific style */
 
-div#WorkshopofOtherKnowledge p { color:blue;  }
-div#WorkshopofOtherKnowledge a { color:red;  }
+div#WorkshopofOtherKnowledge body{ 
+	background: #174593;
+}
+
+div#WorkshopofOtherKnowledge h1 { 
 
 
-div#ArtandDesigninNewEconomiesSpeculativeScenariosForReal-lifeInnovations p {color:green;}
-div#WorkshopofOtherKnowledge a { color:green;  }
+}
+
+div#WorkshopofOtherKnowledge p { 
+	color: #fcedca;  
+}
+div#WorkshopofOtherKnowledge a { color:#f5aeb3;  }
+
+
+div#ArtandDesigninNewEconomiesSpeculativeScenariosForReal-lifeInnovations h1 {
+
+}
+
+div#ArtandDesigninNewEconomiesSpeculativeScenariosForReal-lifeInnovations p {
+	color:#fcedca;
+}
+div#ArtandDesigninNewEconomiesSpeculativeScenariosForReal-lifeInnovations a { 
+	color: #f5aeb3;  
+}
