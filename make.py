@@ -11,6 +11,13 @@ from readyaml import TOC_populate
 from createwebsite import jinja_env
 from createwebsite import jinja_render_template
 from weasyprint import HTML, CSS
+from pprint import pprint
+import pkg_resources
+installed_packages = pkg_resources.working_set
+installed_packages_list = sorted([i.key for i in installed_packages])
+if 'nltk' in installed_packages_list:
+    import nltk
+
 
 
 parser = ArgumentParser(prog=sys.argv[0],
@@ -56,14 +63,11 @@ def img_ref2figure(html):
 
 
 def word_frequency(word_amount=20):
-    # returns word frequency 
-    # REQUIRES nltk
-    import nltk
-    from pprint import pprint
-
+    '''
+    Returns word frequency of the entire publication
+    REQUIRES NLTK
+    '''
     print('Making {}'.format(args.output))
-    # pdfdir = dir_parent
-    # tmp_txt = pdfdir + 'allcontent.txt'
     convert_loop(TOC=metadata['TOC'],
                  _from='docx',
                  _to='txt')
@@ -76,13 +80,29 @@ def word_frequency(word_amount=20):
             # onto a single variable html_all
             txt_all += txt
     allWords = nltk.tokenize.word_tokenize(txt_all)
-    allWordDist = nltk.FreqDist(w.lower() for w in allWords)
     stopwords = nltk.corpus.stopwords.words('english')
-    allWordExceptStopDist = nltk.FreqDist(w.lower() for w in allWords if w not in stopwords and len(w) > 2)    
+    allWordExceptStopDist = nltk.FreqDist(w.lower() for w in allWords
+                                          if w not in stopwords and len(w) > 2)
     mostCommon = allWordExceptStopDist.most_common(word_amount)
-    #mostCommon = dict(mostCommon)
     pprint(mostCommon)
+    return mostCommon
 
+
+def keywords_to_html(words_freqs, html):
+    '''
+    Tags the html content with keyword from word_freq
+    inputs:
+        - word_freq: a list of tupples, containing:
+        most common words (keywords) and their frequency
+        - html: the html content to be tagged
+    '''
+    html_span = '<span class="keyword {}">{}</span>'
+    for word_freq in words_freqs:
+        word = word_freq[0]
+        # freq = word_freq[1]
+        # TODO: include Capitalized, uppercase words
+        html = html.replace(word, html_span.format(word, word))
+    return html
 
 
 def convert_loop(TOC, _from, _to):
@@ -149,6 +169,8 @@ if args.output == 'pdf':
                                                        ]
                                           )
 elif args.output == 'website':
+    if 'nltk' in installed_packages_list:
+        words_freqs = word_frequency(word_amount=30)
     print('Making {}'.format(args.output))
     env = jinja_env(dir_parent + '/website-templates')
     # create website's text_entries
@@ -159,7 +181,11 @@ elif args.output == 'website':
         print(text_entry['html'])
         with open(text_entry['html'], 'r') as html_file:
             html_text = html_file.read()
-            # print(html_text)
+            # if nltk module is installed
+            # tag most frequent words:
+            if 'nltk' in installed_packages_list:
+                html_text = keywords_to_html(words_freqs=words_freqs,
+                                             html=html_text)
         webpage = jinja_render_template(
             env=env,
             tmpl_file='contentpage.html',

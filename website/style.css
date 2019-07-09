@@ -39,6 +39,13 @@ li.menuitem a {
 	text-decoration:none;
 }
 
+/* keywords */
+
+span.keyword{font-size: 1.5em;}
+
+/* body */
+
+
 @import url('https://fonts.googleapis.com/css?family=Spectral&display=swap');
 
 body{
