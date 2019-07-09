@@ -14,3 +14,6 @@ pdf/*
 !pdf/style.pdf.css
 *\.DS_Store*
 sketch*
+txt/
+txt/*
+!txt/.track

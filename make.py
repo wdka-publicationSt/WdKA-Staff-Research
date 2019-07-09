@@ -18,7 +18,7 @@ parser = ArgumentParser(prog=sys.argv[0],
                         description="Script to convert \
                         docx files to other format: icml, html, website")
 parser.add_argument("output",
-                    choices=['website', 'html', 'icml', 'pdf'],
+                    choices=['website', 'html', 'icml', 'pdf', 'wordfrequency'],
                     default='website',
                     help="output formats: website, html, icml, pdf")
 
@@ -55,6 +55,36 @@ def img_ref2figure(html):
     return html
 
 
+def word_frequency(word_amount=20):
+    # returns word frequency 
+    # REQUIRES nltk
+    import nltk
+    from pprint import pprint
+
+    print('Making {}'.format(args.output))
+    # pdfdir = dir_parent
+    # tmp_txt = pdfdir + 'allcontent.txt'
+    convert_loop(TOC=metadata['TOC'],
+                 _from='docx',
+                 _to='txt')
+    txt_all = ''
+    for text_entry in metadata['TOC']:
+        print(text_entry['txt'])
+        with open(text_entry['txt'], 'r') as txt_file:
+            txt = txt_file.read()
+            # assemble all HTML files content
+            # onto a single variable html_all
+            txt_all += txt
+    allWords = nltk.tokenize.word_tokenize(txt_all)
+    allWordDist = nltk.FreqDist(w.lower() for w in allWords)
+    stopwords = nltk.corpus.stopwords.words('english')
+    allWordExceptStopDist = nltk.FreqDist(w.lower() for w in allWords if w not in stopwords and len(w) > 2)    
+    mostCommon = allWordExceptStopDist.most_common(word_amount)
+    #mostCommon = dict(mostCommon)
+    pprint(mostCommon)
+
+
+
 def convert_loop(TOC, _from, _to):
     '''
     Loop through all files TOC
@@ -65,11 +95,14 @@ def convert_loop(TOC, _from, _to):
               text_entry[_to]), "\n")
         text_entry_content = pandoc_convert(inputfile=text_entry['docx'],
                                             _from=_from,
-                                            _to=_to)
+                                            _to=_to.replace('txt','plain'))
         text_entry_content = img_ref2figure(text_entry_content)
         with open(text_entry[_to], 'w') as outfile:
             outfile.write(text_entry_content)
 
+
+if args.output == 'wordfrequency':
+    word_frequency(word_amount=30)
 
 if args.output == 'pdf':
     print('Making {}'.format(args.output))
