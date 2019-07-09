@@ -11,7 +11,16 @@ Process page <http://publicationstation.wdka.hro.nl/wiki/index.php/Publisher:WdK
     - PyYAML
         + website: <https://pyyaml.org/wiki/PyYAMLDocumentation>    
         + install: `pip3 install pyyaml`
-
+    - NLTK (for `./make wordfrequency`)
+        + website: <https://www.nltk.org>
+        + install setps:
+            + install nltk : `pip3 install --user -U nltk`
+            + run python interpreter `python3`
+            + import NLTK `import nltk` if python does not complain you are good :)
+            + now it is time to download some the NLTK packages we need
+                + `nltk.download('stopwords')` to exclude English stopwords
+                + `nltk.download('punkt')` to tokenize the text's sentences
+            + You are done installing. Exit python: `exit()` 
 ## Metadata
 `publication_metadata.yaml` includes 
 * metadata about the publication
@@ -30,11 +39,11 @@ To convert the .docx files in the docx/ folder to either html, icml or website:
 * run `./make.py website` for website output
     - website styling is defined in: `website/style.css` as its stylesheet
     - resulting website will be saved in folder `website/` 
-
 * run `./make.py pdf` for PDF output
     - PDF styling is defined in: `pdf/style.pdf.css` as CSS
     - errors found while generating the pdf are stored in `pdf/weasyprint.log`
     - resulting pdf will be saved in `pdf/publication.pdf`
+* run `./make.py  wordfrequency` to get the texts' word frequency
 
 
 ## On CSS for print
