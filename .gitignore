@@ -18,3 +18,5 @@ sketch*
 txt/
 txt/*
 !txt/.track
+prototypes/
+prototypes/*

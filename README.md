@@ -21,6 +21,11 @@ Process page <http://publicationstation.wdka.hro.nl/wiki/index.php/Publisher:WdK
                 + `nltk.download('stopwords')` to exclude English stopwords
                 + `nltk.download('punkt')` to tokenize the text's sentences
             + You are done installing. Exit python: `exit()` 
+        + Issues: If **error ssl certificate verify failed** appears on a Mac, upon `nltk.download()`  
+            + run: `/Applications/Python 3.7 /Install Certificates.command`
+            + 3.7 should be your current version of python. Check this: `python3 --version`
+            + [reference](https://stackoverflow.com/questions/41348621/ssl-error-downloading-nltk-data)
+        + 
 ## Metadata
 `publication_metadata.yaml` includes 
 * metadata about the publication
