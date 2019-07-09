@@ -1,6 +1,7 @@
 ~$*
 .content
 all.html
+commonWords.txt
 icml/*
 html/*
 website/*

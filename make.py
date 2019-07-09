@@ -82,8 +82,13 @@ def word_frequency(word_amount=20):
     allWords = nltk.tokenize.word_tokenize(txt_all)
     stopwords = nltk.corpus.stopwords.words('english')
     allWordExceptStopDist = nltk.FreqDist(w.lower() for w in allWords
-                                          if w not in stopwords and len(w) > 2)
+                                          if w.lower() not in stopwords and
+                                          len(w) > 2)
     mostCommon = allWordExceptStopDist.most_common(word_amount)
+    mostCommon_filename = dir_parent + '/commonWords.txt'
+    with open(mostCommon_filename, 'w') as mostCommon_file:
+        mostCommon_list_strings = [(': ').join([pair[0], str(pair[1])]) for pair in mostCommon]
+        mostCommon_file.write(('\n').join(mostCommon_list_strings))
     pprint(mostCommon)
     return mostCommon
 
