@@ -14,8 +14,6 @@ ul.menu{
   	font-family: Merriweather;
   	text-decoration:none;
   	left: 0%;
-  	color: #f5aeb3;
-/*  background:#fcedca;*/
   	overflow-x: hidden;
   	padding-left: 5%;
   	padding-right: 5%;
@@ -23,7 +21,6 @@ ul.menu{
 
 li.menuitem {
 	margin-bottom: 10px;
-	color: #f5aeb3;
 	list-style-type:none;
 
  }
@@ -32,16 +29,23 @@ li.menuitem span.title{
 		list-style-type:none;
 		text-decoration:none;
 }
-li.menuitem span.authors{ display: block; font-size: .8em }
+li.menuitem span.authors{ 
+	display: block; 
+	font-size: .8em;
+}
 li.menuitem a { 
-	color: #f5aeb3;
 	list-style-type:none;
 	text-decoration:none;
+	color: #f5aeb3;
 }
 
 /* keywords */
 
-span.keyword{font-size: 1.5em;}
+span.keyword{
+	font-size: 1.5em;
+	font-family: Merriweather;
+	color: #f5aeb3;
+}
 
 /* body */
 
@@ -52,7 +56,7 @@ body{
 	font-family: Open Sans;
 	padding-right: 10%;
 	padding-left: 35%;
-	color: #fcedca;
+	color: #425f95;
 }
 
 h1{
@@ -95,7 +99,6 @@ figcaption {
 }
 
 hr{
-	color: #f5aeb3;
 }
 
 #content{
@@ -104,7 +107,6 @@ hr{
 
 
 [role=doc-endnote]{
-	color: #f5aeb3;
 }
 
 [role=doc-backlink]{
@@ -120,7 +122,7 @@ hr{
 /* Article specific style */
 
 div#WorkshopofOtherKnowledge body{ 
-	background: #174593;
+
 }
 
 div#WorkshopofOtherKnowledge h1 { 
@@ -129,9 +131,9 @@ div#WorkshopofOtherKnowledge h1 {
 }
 
 div#WorkshopofOtherKnowledge p { 
-	color: #fcedca;  
+
 }
-div#WorkshopofOtherKnowledge a { color:#f5aeb3;  }
+div#WorkshopofOtherKnowledge a {  }
 
 
 div#ArtandDesigninNewEconomiesSpeculativeScenariosForReal-lifeInnovations h1 {
@@ -139,8 +141,8 @@ div#ArtandDesigninNewEconomiesSpeculativeScenariosForReal-lifeInnovations h1 {
 }
 
 div#ArtandDesigninNewEconomiesSpeculativeScenariosForReal-lifeInnovations p {
-	color:#fcedca;
+
 }
 div#ArtandDesigninNewEconomiesSpeculativeScenariosForReal-lifeInnovations a { 
-	color: #f5aeb3;  
+
 }
