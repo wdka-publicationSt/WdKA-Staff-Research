@@ -9,7 +9,7 @@ from argparse import ArgumentParser
 def pandoc_convert(_from, _to, inputfile):
     tmpfile = os.path.abspath('./.content')  # path of tempfile
     open(tmpfile, 'a').close()  # write empty tempfile to disk
-    pandoc_cmd = 'pandoc {input} -f {form} -t {to} -o {output}'.format(
+    pandoc_cmd = 'pandoc "{input}" -f {form} -t {to} -o "{output}"'.format(
         form=_from,
         to=_to,
         input=inputfile,
