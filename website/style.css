@@ -3,13 +3,31 @@ html{
 	scroll-behavior: smooth;
 }
 
+	div.left{
+		position: relative;
+	    display: inline-block;
+		width:30%;
+		top: 0;
+
+	}		
+
+
+	div.right{
+		position: relative;
+	    display: inline-block;	
+	    width: 69%;
+
+	}	
+#publication_title{
+	color:#f5aeb3;
+}
 div.menu { }
 ol.menu {}
 li.menuitem { }
 
 ul.menu{
 	top: 0%;
-	width: 25%;
+	width: 20%;
   	position: fixed;
   	font-family: Merriweather;
   	text-decoration:none;
@@ -25,9 +43,9 @@ li.menuitem {
 
  }
 li.menuitem span.title{ 
-		color: inherit;
-		list-style-type:none;
-		text-decoration:none;
+	color: inherit;
+	list-style-type:none;
+	text-decoration:none;
 }
 li.menuitem span.authors{ 
 	display: block; 
@@ -40,12 +58,33 @@ li.menuitem a {
 }
 
 /* keywords */
+span{
+	display: inline;
+}
 
 span.keyword{
-	font-size: 1.5em;
 	font-family: Merriweather;
 	color: #f5aeb3;
 }
+
+span.keyword:hover{
+	font-family: Merriweather;
+	color: green;
+}
+
+span.hiddenkeyword { display: none; }
+span.keyword:hover span.hiddenkeyword { 
+	text-decoration:none;
+	font-size: 12pt;
+	display: block;
+
+}
+.hiddenlink{
+	text-decoration:none;
+	font-size: 12pt;
+	color: pink;
+}
+
 
 /* body */
 
@@ -53,11 +92,14 @@ span.keyword{
 @import url('https://fonts.googleapis.com/css?family=Spectral&display=swap');
 
 body{
+
 	font-family: Open Sans;
-	padding-right: 10%;
-	padding-left: 35%;
+/*	padding-right: 10%;
+	padding-left: 35%;*/
 	color: #425f95;
 }
+
+
 
 h1{
 	font-size: 250%;
@@ -83,14 +125,14 @@ blockquote{
 
 figure{	   
 	margin:0px;
-	width: 400px;
+/*	width: 400px;*/
 	}
 
 img {width:40%;
   -webkit-transition: width 2s; /* Safari */
   transition: width 2s;}
 img:hover{
-	width: 70%;
+/*	width: 70%;*/
 
 }
 
@@ -102,7 +144,7 @@ hr{
 }
 
 #content{
-	width: 60%;
+	/*width: 60%;*/
 }
 
 
@@ -111,12 +153,12 @@ hr{
 
 [role=doc-backlink]{
 	text-decoration: none;
-	color: red;
+	color: pink;
 }
 
 .footnote-ref{
 	text-decoration: none;
-	color: red;
+	color: pink;
 }
 
 /* Article specific style */
@@ -126,22 +168,21 @@ div#WorkshopofOtherKnowledge body{
 }
 
 div#WorkshopofOtherKnowledge h1 { 
-
-
+	color: #306c35;
 }
 
 div#WorkshopofOtherKnowledge p { 
-
+	color: #306c35;
 }
 div#WorkshopofOtherKnowledge a {  }
 
 
 div#ArtandDesigninNewEconomiesSpeculativeScenariosForReal-lifeInnovations h1 {
-
+	color: #174593;
 }
 
 div#ArtandDesigninNewEconomiesSpeculativeScenariosForReal-lifeInnovations p {
-
+	color: #174593;
 }
 div#ArtandDesigninNewEconomiesSpeculativeScenariosForReal-lifeInnovations a { 
 
