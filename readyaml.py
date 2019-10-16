@@ -23,13 +23,11 @@ def TOC_populate(parent_dir, metadata_dict):
             docx = parent_dir + '/docx/' + text_entry['docx']
             html = docx.replace('/docx/', '/html/').replace('.docx', '.html')
             icml = docx.replace('/docx/', '/icml/').replace('.docx', '.icml')
-            txt = docx.replace('/docx/', '/txt/').replace('.docx', '.txt')
             # for text entry in TOC
             # add full path of html, icml, docx files
             text_entry['html'] = html
             text_entry['docx'] = docx
             text_entry['icml'] = icml
-            text_entry['txt'] = txt
         except Exception as e:
             print('Error with {} in {}'.format(e, text_entry))
             sys.exit(1)
