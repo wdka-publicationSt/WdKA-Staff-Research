@@ -11,21 +11,7 @@ Process page <http://publicationstation.wdka.hro.nl/wiki/index.php/Publisher:WdK
     - PyYAML
         + website: <https://pyyaml.org/wiki/PyYAMLDocumentation>    
         + install: `pip3 install pyyaml`
-    - NLTK (for `./make wordfrequency`)
-        + website: <https://www.nltk.org>
-        + install setps:
-            + install nltk : `pip3 install --user -U nltk`
-            + run python interpreter `python3`
-            + import NLTK `import nltk` if python does not complain you are good :)
-            + now it is time to download some the NLTK packages we need
-                + `nltk.download('stopwords')` to exclude English stopwords
-                + `nltk.download('punkt')` to tokenize the text's sentences
-            + You are done installing. Exit python: `exit()` 
-        + Issues: If **error ssl certificate verify failed** appears on a Mac, upon `nltk.download()`  
-            + run: `/Applications/Python 3.7 /Install Certificates.command`
-            + 3.7 should be your current version of python. Check this: `python3 --version`
-            + [reference](https://stackoverflow.com/questions/41348621/ssl-error-downloading-nltk-data)
-        + 
+         
 ## Metadata
 `publication_metadata.yaml` includes 
 * metadata about the publication
@@ -48,7 +34,6 @@ To convert the .docx files in the docx/ folder to either html, icml or website:
     - PDF styling is defined in: `pdf/style.pdf.css` as CSS
     - errors found while generating the pdf are stored in `pdf/weasyprint.log`
     - resulting pdf will be saved in `pdf/publication.pdf`
-* run `./make.py  wordfrequency` to get the texts' word frequency
 
 
 ## On CSS for print

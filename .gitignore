@@ -1,4 +1,5 @@
 ~$*
+.DS_Store
 .content
 all.html
 commonWords.txt
@@ -13,10 +14,16 @@ docx/AldjevanMeer.docx
 docx/\.DS_Store
 pdf/*
 !pdf/style.pdf.css
-*\.DS_Store*
 sketch*
 txt/
 txt/*
-!txt/.track
 prototypes/
 prototypes/*
+StaffResearch-blueprint.docx
+StaffResearch-blueprint.md
+test.pdf
+tests/
+tmp_function.py
+weasyprint
+weasyprint.log
+
