@@ -6,26 +6,36 @@ TOC:
       # follow this structure for all articles:
   - title: "Introduction" 
     docx: "index.docx" 
-  - title: "Workshop of Other Knowledge"
+
+  - title: "๏ Workshop of Other Knowledge"
     authors: 
       - "Aldje van Meer"
     docx: "AldjevanMeer.docx" 
-  - title: "Art and Design in New Economies: Speculative Scenarios For Real-life Innovations "
+
+  - title: "◊ Art and Design in New Economies: Speculative Scenarios For Real-life Innovations "
     authors: 
       - "Deanna Herst" 
     docx: "DeannaHerst.docx"
-  - title: "An invitation, a workshop, a skype conversation and some questions"
+
+  - title: "▽ An invitation, a workshop, a skype conversation and some questions"
     authors: 
       - "Rolf Engelen"
       - "Vanessa Jane Phaff"
       - "Sjoerd Westbroek"
       - "Johanneke van der Ziel" 
-    docx: "Sjoerd.docx"
-  - title: "Strategies of Reclaiming"
+    docx: "SjoerdWestbroek.docx"
+
+  - title: "> Strategies of Reclaiming"
     authors: 
       - "Michelle Teran" 
     docx: "Michelle.docx"
-  - title: "Post-scripted script of a Pecha Kucha talk delivered at ELIA conference in 2018"
+
+  - title: "* What is Autonomy?"
+    authors: 
+      - "Florian Cramer" 
+    docx: "FlorianCramer.docx"
+
+  - title: "↑ Post-scripted script of a Pecha Kucha talk delivered at ELIA conference in 2018."
     authors: 
       - "Clara Balaguer" 
     docx: "Clara.docx"
