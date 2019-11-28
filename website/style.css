@@ -41,7 +41,8 @@ ol.menu {}
 li.menuitem { }
 
 ul.menu{
-  	font-family: KoHo;
+  	font-family: 'KoHo', sans-serif;
+
   	text-decoration:none;
   	position: relative;
   	padding-left: 0%;
@@ -83,7 +84,8 @@ li.menuitem a {
 
 body{
 
-	font-family: KoHo;
+	font-family: 'KoHo', sans-serif;
+
 	padding-right: 10%;
 	padding-left: 20%;
 }
