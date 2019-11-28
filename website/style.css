@@ -19,7 +19,6 @@ html{
 
 	}	
 #publication_title{
-	color: #f5aeb3;
 	position: relative;
 	max-width: 50%;
 	margin-top:3%;
@@ -33,8 +32,8 @@ html{
 	left: 0%;
 	top: 0%;
 	max-width:50%;
-	padding-left: 3%;
-  	padding-right: 5%;
+	padding-left: 5%;
+  	padding-right: 3%;
 	
 
 }
@@ -42,7 +41,7 @@ ol.menu {}
 li.menuitem { }
 
 ul.menu{
-  	font-family: Merriweather;
+  	font-family: KoHo;
   	text-decoration:none;
   	position: relative;
   	padding-left: 0%;
@@ -71,36 +70,10 @@ li.menuitem span.authors{
 li.menuitem a { 
 	list-style-type:none;
 	text-decoration:none;
-	color: #f5aeb3;
-}
-
-/* keywords */
-span{
-	display: inline;
-}
-
-span.keyword{
-	font-family: Merriweather;
-	color: #f5aeb3;
-}
-
-span.keyword:hover{
-	font-family: Merriweather;
-	color: green;
-}
-
-span.hiddenkeyword { display: none; }
-span.keyword:hover span.hiddenkeyword { 
-	text-decoration:none;
-	font-size: 12pt;
-	display: block;
 
 }
-.hiddenlink{
-	text-decoration:none;
-	font-size: 12pt;
-	color: pink;
-}
+
+
 
 
 /* body */
@@ -110,10 +83,9 @@ span.keyword:hover span.hiddenkeyword {
 
 body{
 
-	font-family: Open Sans;
-/*	padding-right: 10%;
-	padding-left: 35%;*/
-	color: #425f95;
+	font-family: KoHo;
+	padding-right: 10%;
+	padding-left: 20%;
 }
 
 
@@ -128,7 +100,6 @@ h2{
 }
 
 h3{
-	color: grey;
 	font-size: 12pt;
 }
 
@@ -172,12 +143,12 @@ hr{
 
 [role=doc-backlink]{
 	text-decoration: none;
-	color: pink;
+
 }
 
 .footnote-ref{
 	text-decoration: none;
-	color: pink;
+
 }
 
 /* Article specific style */
@@ -187,21 +158,20 @@ div#WorkshopofOtherKnowledge body{
 }
 
 div#WorkshopofOtherKnowledge h1 { 
-	color: #306c35;
+
 }
 
 div#WorkshopofOtherKnowledge p { 
-	color: #306c35;
+
 }
 div#WorkshopofOtherKnowledge a {  }
 
 
 div#ArtandDesigninNewEconomiesSpeculativeScenariosForReal-lifeInnovations h1 {
-	color: #174593;
+
 }
 
 div#ArtandDesigninNewEconomiesSpeculativeScenariosForReal-lifeInnovations p {
-	color: #174593;
 }
 div#ArtandDesigninNewEconomiesSpeculativeScenariosForReal-lifeInnovations a { 
 
