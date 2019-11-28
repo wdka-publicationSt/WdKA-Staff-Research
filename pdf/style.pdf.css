@@ -1,12 +1,13 @@
 /* style for PDF of publication */
 
+@import url('https://fonts.googleapis.com/css?family=KoHo&display=swap');
+
 @page {
     size: 17cm 24cm; /* width height */ 
     /* OR */
     /* size: A5 portrait; 
     padding-top:8%;
     padding-bottom: 16%;*/
-    background-color: #fcedca; 
     }
 
 @page:first {
@@ -20,7 +21,7 @@
 
 	@bottom-center {
        content: counter(page);
-          font-family: Merriweather;
+          font-family: 'KoHo', sans-serif;
           color: #f5aeb3;
           font-size: 80%;
 
@@ -34,7 +35,7 @@
 
   	@top-center {
        content: "Staff Research";
-          font-family: Merriweather;
+          font-family: 'KoHo', sans-serif;
           color: #f5aeb3;
           font-size: 80%;
 
@@ -42,7 +43,7 @@
 
     @bottom-center {
        content: counter(page);
-          font-family: Merriweather;
+          font-family: 'KoHo', sans-serif;
           color: #f5aeb3;
           font-size: 80%;}
 
@@ -59,7 +60,7 @@ body{
 
 h1 {
 	page-break-before: always !important; /*break page before h1*/
-  font-family: Merriweather;
+  font-family: 'KoHo', sans-serif;
 
 }
 
