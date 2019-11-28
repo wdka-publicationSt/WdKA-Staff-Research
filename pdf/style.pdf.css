@@ -22,7 +22,6 @@
 	@bottom-center {
        content: counter(page);
           font-family: 'KoHo', sans-serif;
-          color: #f5aeb3;
           font-size: 80%;
 
 
@@ -36,7 +35,6 @@
   	@top-center {
        content: "Staff Research";
           font-family: 'KoHo', sans-serif;
-          color: #f5aeb3;
           font-size: 80%;
 
    }
@@ -44,7 +42,6 @@
     @bottom-center {
        content: counter(page);
           font-family: 'KoHo', sans-serif;
-          color: #f5aeb3;
           font-size: 80%;}
 
 }
@@ -52,9 +49,6 @@
 
 body{
     font-size:11pt;
-
-    background-color: #fcedca; 
-    color: #174593;
     font-family: Open Sans;
  }
 
@@ -78,7 +72,7 @@ p{
 }
 
 a {
-  color: #f5aeb3;
+
 }
 
 .footnote-ref{
