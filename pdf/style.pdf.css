@@ -16,8 +16,8 @@
 }
 
 @page:right {
-  padding-left: 1cm; /*inner margin*/
-  padding-right:1cm; /*outer margin*/ 
+  padding-left: ; /*inner margin*/
+  padding-right:; /*outer margin*/ 
 
 	@bottom-center {
        content: counter(page);
@@ -29,8 +29,8 @@
 }
 
 @page:left {
-  padding-right: 1cm; /*inner margin*/
-  padding-left:1cm; /*outer margin*/
+  padding-right: ; /*inner margin*/
+  padding-left:; /*outer margin*/
 
   	@top-center {
        content: "Staff Research";
@@ -50,6 +50,8 @@
 body{
     font-size:11pt;
     font-family: Open Sans;
+    text-decoration: none;
+    color: black;
  }
 
 h1 {
@@ -72,7 +74,8 @@ p{
 }
 
 a {
-
+	    text-decoration: none;
+    color: black;
 }
 
 .footnote-ref{
