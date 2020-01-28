@@ -126,19 +126,25 @@ figure{
 /*	width: 400px;*/
 	}
 
-img {width:40%;
+img {width:80%;
   -webkit-transition: width 2s; /* Safari */
-  transition: width 2s;}
+  transition: width 2s;
+	}
 img:hover{
 /*	width: 70%;*/
 
 }
 
 figcaption {
-    display: inline-block;
+ /*   display: inline-block;*/
+    font-size: 75%;
 }
 
 hr{
+}
+
+p:first-of-type {
+  font-size: 150%;
 }
 
 #content{
