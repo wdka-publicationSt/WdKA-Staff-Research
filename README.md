@@ -17,7 +17,7 @@ Process page <http://publicationstation.wdka.hro.nl/wiki/index.php/Publisher:WdK
 * metadata about the publication
 *  Table Of Contents (TOC): 
 
-The information contained in this file is used to generate the structure of the publication and its colophone.
+The information contained in this file is used to generate the structure of the publication and its colophon.
 
 ## conversion
 To convert the .docx files in the docx/ folder to either html, icml or website:
