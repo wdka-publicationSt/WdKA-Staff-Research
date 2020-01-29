@@ -1,6 +1,6 @@
 Title: "Staff Research WdKA"
-Date: "2019"
-Publisher: "WdKA / Hybrid Publishing"
+Date: "2020"
+Publisher: "Hybrid Publishing, WdKA"
 Design: "Myrna de Bruijn"
 TOC:
       # follow this structure for all articles:
@@ -40,7 +40,7 @@ TOC:
       - "Clara Balaguer" 
     docx: "Clara.docx"
 
-    - title: "+ The Autonomous Fabric ?"
+    - title: "+ The Autonomous Fabric?"
     authors: 
       - "Florian Cramer" 
     docx: "FlorianCramer.docx"
