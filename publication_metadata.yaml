@@ -4,18 +4,26 @@ Publisher: "Hybrid Publishing, WdKA"
 Design: "Myrna de Bruijn"
 TOC:
       # follow this structure for all articles:
+  - title: "Biografies.docx" 
+    docx: "Biografies.docx" 
+
   - title: "Introduction" 
-    docx: "index.docx" 
+    docx: "Introduction.docx" 
 
   - title: "๏ Workshop of Other Knowledge"
     authors: 
       - "Aldje van Meer"
-    docx: "AldjevanMeer.docx" 
+    docx: "AldjevanMeer_DEF.docx" 
+
+  - title: "↑ Post-scripted script of a Pecha Kucha talk delivered at ELIA conference in 2018."
+    authors: 
+      - "Clara Balaguer" 
+    docx: "Clara_PechaKucha_ELAINE_def.docx"
 
   - title: "◊ Art and Design in New Economies: Speculative Scenarios For Real-life Innovations "
     authors: 
       - "Deanna Herst" 
-    docx: "DeannaHerst.docx"
+    docx: "DeannaHerst_DEF.docx"
 
   - title: "▽ An invitation, a workshop, a skype conversation and some questions"
     authors: 
@@ -23,24 +31,23 @@ TOC:
       - "Vanessa Jane Phaff"
       - "Sjoerd Westbroek"
       - "Johanneke van der Ziel" 
-    docx: "SjoerdWestbroek.docx"
+    docx: "Engelen-Phaff-Westbroek-Ziel_ELIAHybridPublishing_DEF.docx"
 
-  - title: "> Strategies of Reclaiming"
+  - title: "+ The Autonomous Fabric"
     authors: 
-      - "Michelle Teran" 
-    docx: "Michelle.docx"
+      - "Florian Cramer" 
+    docx: "Captions The Autonomous Fabric_DEF"
 
   - title: "* What is Autonomy?"
     authors: 
       - "Florian Cramer" 
-    docx: "FlorianCramer.docx"
+    docx: "SimonFlorian_what-is-autonomy_DEF.docx"
 
-  - title: "↑ Post-scripted script of a Pecha Kucha talk delivered at ELIA conference in 2018."
+  - title: "> Strategies of Reclaiming"
     authors: 
-      - "Clara Balaguer" 
-    docx: "Clara.docx"
+      - "Michelle Teran" 
+    docx: "MichelleTeranStrategiesofReclaiming_DEF.docx"
 
-    - title: "+ The Autonomous Fabric?"
-    authors: 
-      - "Florian Cramer" 
-    docx: "FlorianCramer.docx"
+  - title: "Colophon"
+    docx: "Colophon.docx"
+

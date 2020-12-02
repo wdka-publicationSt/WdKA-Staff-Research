@@ -3,7 +3,8 @@
 @import url('https://fonts.googleapis.com/css?family=KoHo&display=swap');
 
 @page {
-    size: 17cm 24cm; /* width height */ 
+    size: 14.8cm 21cm;
+    padding: 0; /* width height */ 
     /* OR */
     /* size: A5 portrait; 
     padding-top:8%;
@@ -16,8 +17,8 @@
 }
 
 @page:right {
-  padding-left: ; /*inner margin*/
-  padding-right:; /*outer margin*/ 
+  padding-left: 0cm; /*inner margin*/
+  padding-right:0cm; /*outer margin*/ 
 
 	@bottom-center {
        content: counter(page);
@@ -29,8 +30,8 @@
 }
 
 @page:left {
-  padding-right: ; /*inner margin*/
-  padding-left:; /*outer margin*/
+  padding-right: 0cm; /*inner margin*/
+  padding-left: 0cm; /*outer margin*/
 
   	@top-center {
        content: "Staff Research";
@@ -48,8 +49,9 @@
 
 
 body{
-    font-size:11pt;
-    font-family: Open Sans;
+    font-size: 10pt;
+    line-height: 13pt;
+    font-family: KoHo;
     text-decoration: none;
     color: black;
  }
@@ -57,6 +59,8 @@ body{
 h1 {
 	page-break-before: always !important; /*break page before h1*/
   font-family: 'KoHo', sans-serif;
+  font-size: 20pt;
+  line-height: 23pt;
 
 }
 
@@ -70,7 +74,7 @@ img{
 }
 
 p{
-      line-height: 125%; 
+      
 }
 
 a {
