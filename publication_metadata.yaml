@@ -1,26 +1,23 @@
-Title: "Staff Research WdKA"
+Title: "WdKA Research"
 Date: "2020"
 Publisher: "Hybrid Publishing, WdKA"
 Design: "Myrna de Bruijn"
 TOC:
       # follow this structure for all articles:
-  - title: "Biografies.docx" 
-    docx: "Biografies.docx" 
-
   - title: "Introduction" 
-    docx: "Introduction.docx" 
+    docx: "Introduction_la.docx" 
 
-  - title: "๏ Workshop of Other Knowledge"
+  - title: "+ The Autonomous Fabric"
     authors: 
-      - "Aldje van Meer"
-    docx: "AldjevanMeer_DEF.docx" 
-
-  - title: "↑ Post-scripted script of a Pecha Kucha talk delivered at ELIA conference in 2018."
+      - "Florian Cramer" 
+    docx: "Captions The Autonomous Fabric_markupvoorStills.docx"
+  
+  - title: "* What is Autonomy?"
     authors: 
-      - "Clara Balaguer" 
-    docx: "Clara_PechaKucha_ELAINE_def.docx"
+      - "Florian Cramer" 
+    docx: "SimonFlorian_what-is-autonomy_DEF.docx"
 
-  - title: "◊ Art and Design in New Economies: Speculative Scenarios For Real-life Innovations "
+  - title: "◊ Art and Design in New Economies: Speculative Scenarios For Real-life Innovations"
     authors: 
       - "Deanna Herst" 
     docx: "DeannaHerst_DEF.docx"
@@ -33,21 +30,23 @@ TOC:
       - "Johanneke van der Ziel" 
     docx: "Engelen-Phaff-Westbroek-Ziel_ELIAHybridPublishing_DEF.docx"
 
-  - title: "+ The Autonomous Fabric"
+  - title: "๏ Workshop of Other Knowledge"
     authors: 
-      - "Florian Cramer" 
-    docx: "Captions The Autonomous Fabric_DEF"
+      - "Aldje van Meer" 
+    docx: "AldjevanMeer_DEF.docx" 
 
-  - title: "* What is Autonomy?"
+  - title: "↑ Post-scripted script of a Pecha Kucha talk delivered at ELIA conference in 2018."
     authors: 
-      - "Florian Cramer" 
-    docx: "SimonFlorian_what-is-autonomy_DEF.docx"
+      - "Clara Balaguer" 
+    docx: "Clara_PechaKucha_ELAINE_def.docx"
 
   - title: "> Strategies of Reclaiming"
     authors: 
       - "Michelle Teran" 
     docx: "MichelleTeranStrategiesofReclaiming_DEF.docx"
 
-  - title: "Colophon"
-    docx: "Colophon.docx"
+  - title: "Biografies" 
+    docx: "Biografies_la.docx" 
 
+  - title: "Colophon" 
+    docx: "Colophon_la.docx"
