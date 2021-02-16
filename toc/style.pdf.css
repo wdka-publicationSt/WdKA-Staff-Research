@@ -82,6 +82,12 @@ a {
     color: black;
 }
 
+.footnote-ref{
+  font-size: 80%;
+  text-decoration: none;
+}
+
+
 /**
   Insert numbers after toc item in toc
 */
@@ -90,7 +96,11 @@ a {
   content: target-counter(attr(href), page);
 }
 
-.footnote-ref{
-  font-size: 80%;
-  text-decoration: none;
+
+/** 
+  Because we inserted wrappers for each article you could insert an extra page break.
+  Like below:
+article {
+  break-before: right;
 }
+*/

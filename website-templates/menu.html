@@ -13,7 +13,7 @@
 	     	</span>
 	     	{% if item.authors %}
 	     	<span class="menuitem authors">
-	     		By:{{" "}}
+	     		{{" "}}
 	     		{%- for author in item.authors -%}
 					{{ author }}
 	     			{%- if author == item.authors|last -%}

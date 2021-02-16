@@ -5,22 +5,26 @@ Design: "Myrna de Bruijn"
 TOC:
       # follow this structure for all articles:
   - title: "Introduction" 
-    docx: "Introduction_la.docx" 
+    docx: "1 Introduction.docx"
+    slug: "article-introduction"
 
   - title: "+ The Autonomous Fabric"
     authors: 
       - "Florian Cramer" 
-    docx: "Captions The Autonomous Fabric_markupvoorStills.docx"
+    docx: "6 Captions The Autonomous Fabric_DEF.docx"
+    slug: "article-the-autonomous-fabric"
   
   - title: "* What is Autonomy?"
     authors: 
       - "Florian Cramer" 
-    docx: "SimonFlorian_what-is-autonomy_DEF.docx"
+    docx: "6 SimonFlorian_what-is-autonomy_DEF.docx"
+    slug: "article-what-is-autonomy"
 
   - title: "◊ Art and Design in New Economies: Speculative Scenarios For Real-life Innovations"
     authors: 
       - "Deanna Herst" 
-    docx: "DeannaHerst_DEF.docx"
+    docx: "4 DeannaHerst_AddedCaseStudy_DEF.docx"
+    slug: "article-art-and-design-in-new-economies"
 
   - title: "▽ An invitation, a workshop, a skype conversation and some questions"
     authors: 
@@ -28,25 +32,31 @@ TOC:
       - "Vanessa Jane Phaff"
       - "Sjoerd Westbroek"
       - "Johanneke van der Ziel" 
-    docx: "Engelen-Phaff-Westbroek-Ziel_ELIAHybridPublishing_DEF.docx"
+    docx: "5 Engelen-Phaff-Westbroek-Ziel_ELIAHybridPublishing_DEF.docx"
+    slug: "article-an-invitation"
 
   - title: "๏ Workshop of Other Knowledge"
     authors: 
       - "Aldje van Meer" 
-    docx: "AldjevanMeer_DEF.docx" 
+    docx: "2 AldjevanMeer_DEF.docx"
+    slug: "article-workshop-of-other-knowledhe"
 
   - title: "↑ Post-scripted script of a Pecha Kucha talk delivered at ELIA conference in 2018."
     authors: 
       - "Clara Balaguer" 
-    docx: "Clara_PechaKucha_ELAINE_def.docx"
+    docx: "3 Clara_PechaKucha_ELAINE_def.docx"
+    slug: "article-post-scripted-script"
 
   - title: "> Strategies of Reclaiming"
     authors: 
       - "Michelle Teran" 
-    docx: "MichelleTeranStrategiesofReclaiming_DEF.docx"
+    docx: "8 MichelleTeranStrategiesofReclaiming_DEF.docx"
+    slug: "article-strategies of reclaiming"
 
   - title: "Biografies" 
-    docx: "Biografies_la.docx" 
+    docx: "0 Biografies.docx" 
+    slug: "article-biografies"
 
   - title: "Colophon" 
-    docx: "Colophon_la.docx"
+    docx: "9 Colophon.docx"
+    slug: "article-colophon"

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 import sys
-import os
+import os, os.path
 import logging
 import re
 from argparse import ArgumentParser
@@ -29,12 +29,13 @@ dir_parent_ls = os.listdir(dir_parent)
 
 # templates enviroment
 env = jinja_env(dir_parent + '/website-templates')
+pdf_env = jinja_env(dir_parent + '/pdf-templates')
 
 # metadata of publication from YAML file
 metadata = readyaml(dir_parent + '/' + 'publication_metadata.yaml')
 metadata = TOC_populate(dir_parent, metadata)  # add full path dirs to TOC
 pprint(metadata)
-
+id
 def img_ref2figure(html):
     '''
     function replaces the reference to an image in the text i.e.:
@@ -73,36 +74,28 @@ def convert_loop(TOC, _from, _to):
 
 if args.output == 'pdf':
     print('Making {}'.format(args.output))
-    pdfdir = dir_parent + '/pdf/'
-    pdfcss = pdfdir + 'style.pdf.css'
-    tmp_html_pdf = pdfdir + 'allcontent.html'
-    pdffile = pdfdir + 'publication.pdf'
+    pdfdir = os.path.join(dir_parent, 'pdf')
+    pdfcss = os.path.join(pdfdir, 'style.pdf.css')
+    tmp_html_pdf = os.path.join(pdfdir, 'allcontent.html')
+    pdffile = os.path.join(pdfdir, 'publication.pdf')
 
     convert_loop(TOC=metadata['TOC'],
                  _from='docx',
                  _to='html')
 
-    html_all = ''
-
+    # Add the converted HTML to the TOC dictionary
     for text_entry in metadata['TOC']:
         print(text_entry['html'])
         with open(text_entry['html'], 'r') as html_file:
-            html_text = html_file.read()
-            # assemble all HTML files content
-            # onto a single variable html_all
-            html_all += html_text
+            text_entry['html_content'] = html_file.read()
 
-    # place html_all to HTML template
-    htlm_head_body = jinja_render_template(
-        env=env,
-        tmpl_file='contentpage.html',
-        title=metadata['Title'],
-        content=html_all,
-    )
+    # Render template
+    template = pdf_env.get_template('base.html')
+    rendered = template.render(title=metadata['Title'], TOC=metadata['TOC'])
 
-    # write content of html_all into tmp file
+    # write content of rendered template into tmp file
     with open(tmp_html_pdf, 'w') as html_tmp:
-        html_tmp.write(htlm_head_body)
+        html_tmp.write(rendered)
 
     # LOG Weasyprint errors
     logger = logging.getLogger('weasyprint')
