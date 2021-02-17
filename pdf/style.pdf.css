@@ -23,7 +23,7 @@
 	@bottom-center {
        content: counter(page);
           font-family: 'KoHo', sans-serif;
-          font-size: 80%;
+          font-size: 70%;
 
 
 	}
@@ -36,14 +36,14 @@
   	@top-center {
        content: "Staff Research";
           font-family: 'KoHo', sans-serif;
-          font-size: 80%;
+          font-size: 70%;
 
    }
 
     @bottom-center {
        content: counter(page);
           font-family: 'KoHo', sans-serif;
-          font-size: 80%;}
+          font-size: 70%;}
 
 }
 
@@ -67,6 +67,11 @@ h1 {
 h2 {
 	page-break-before: avoid !important; /*break page before h2*/
 }
+
+h1::after {
+  font-style: bold;
+  color: green;
+  }
   
 img{    
 	page-break-inside: avoid!important; 
@@ -89,6 +94,17 @@ a {
   float: right;
   content: target-counter(attr(href), page);
 }
+
+#toc li{
+  text-decoration: none;
+  list-style-type:none;
+  margin-left: 0;
+}
+
+ul{
+  padding: 0;
+}
+
 
 .footnote-ref{
   font-size: 80%;
