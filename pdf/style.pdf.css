@@ -20,6 +20,12 @@
   padding-left: 0cm; /*inner margin*/
   padding-right:0cm; /*outer margin*/ 
 
+  @top-center {
+  content: string(doctitle);
+  font-family: 'KoHo', sans-serif;
+          font-size: 70%;
+        }
+
 	@bottom-center {
        content: counter(page);
           font-family: 'KoHo', sans-serif;
@@ -34,7 +40,7 @@
   padding-left: 0cm; /*outer margin*/
 
   	@top-center {
-       content: "Staff Research";
+       content: ("Staff Research");
           font-family: 'KoHo', sans-serif;
           font-size: 70%;
 
@@ -57,6 +63,7 @@ body{
  }
 
 h1 {
+  string-set: doctitle content();
 	page-break-before: always !important; /*break page before h1*/
   font-family: 'KoHo', sans-serif;
   font-size: 20pt;
@@ -101,12 +108,34 @@ a {
   margin-left: 0;
 }
 
-ul{
-  padding: 0;
+ul,li,blockquote{
+ margin:0;
+ padding:0;
+}
+
+#footnote-back{
+  visibility: hidden;
+}
+
+.footnote-back{
+  visibility: hidden;
 }
 
 
 .footnote-ref{
   font-size: 80%;
   text-decoration: none;
+}
+
+sup{
+  font-size: 80%;
+  padding-top: 0;
+  padding-left: 0;
+  margin-top: 0;
+  margin-left: 0;
+  padding-right: 1%;
+}
+
+#footnotes{
+  font-size: 80%;
 }
