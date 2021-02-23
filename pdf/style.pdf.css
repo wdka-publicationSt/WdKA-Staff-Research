@@ -24,6 +24,12 @@
   content: string(doctitle);
   font-family: 'KoHo', sans-serif;
           font-size: 70%;
+    text-align: left;
+    padding: 0;
+    width: 1ch;
+  overflow: hidden;
+  white-space: nowrap;
+
         }
 
 	@bottom-center {
@@ -40,11 +46,16 @@
   padding-left: 0cm; /*outer margin*/
 
   	@top-center {
-       content: ("Staff Research");
-          font-family: 'KoHo', sans-serif;
+  content: string(doctitle);
+  font-family: 'KoHo', sans-serif;
           font-size: 70%;
+    text-align: left;
+    padding: 0;
+    width: 1ch;
+  overflow: hidden;
+  white-space: nowrap;
 
-   }
+        }
 
     @bottom-center {
        content: counter(page);
@@ -63,22 +74,66 @@ body{
  }
 
 h1 {
-  string-set: doctitle content();
+  
 	page-break-before: always !important; /*break page before h1*/
   font-family: 'KoHo', sans-serif;
   font-size: 20pt;
   line-height: 23pt;
+    margin-bottom: 0;
+  padding-bottom: 0;
+    margin: 0;
+  padding: 0;
+      margin-block-start: 0em;
+          margin-block-end: 0em;
 
 }
 
+h1 #the-autonomous-fabric, #the-autonomous-fabric {
+  string-set: doctitle content();
+}
+
 h2 {
+      margin-bottom: 0;
+  padding-bottom: 0;
 	page-break-before: avoid !important; /*break page before h2*/
 }
 
 h1::after {
-  font-style: bold;
-  color: green;
+
+  margin-top: 0;
+  padding-top: 0;
+
   }
+
+ h2{
+  padding-bottom: 1mm;
+  
+ } 
+
+ h3{
+  padding-bottom: 1mm;
+ }
+
+ h4{
+  margin-left: 1cm;
+  font-weight: normal;
+
+ }
+
+h5{
+  font-size: 80%;
+  font-weight: normal;
+  page-break-before: avoid !important; /*break page before h2*/
+}
+
+h6{
+  font-size: 80%;
+  
+  font-weight: normal;
+  margin:0;
+}
+
+
   
 img{    
 	page-break-inside: avoid!important; 
@@ -86,6 +141,9 @@ img{
 }
 
 p{
+  margin-top: 0;
+  padding-top:0;
+ 
       
 }
 
@@ -113,6 +171,11 @@ ul,li,blockquote{
  padding:0;
 }
 
+figcaption{
+  font-size: 80%;
+  line-height: 120%;
+}
+
 #footnote-back{
   visibility: hidden;
 }
@@ -125,6 +188,9 @@ ul,li,blockquote{
 .footnote-ref{
   font-size: 80%;
   text-decoration: none;
+
+  line-height: 120%;
+  font-weight: normal;
 }
 
 sup{
@@ -137,5 +203,16 @@ sup{
 }
 
 #footnotes{
-  font-size: 80%;
+   font-size: 80%;
+  line-height: 120%;
+  font-weight: normal;
+}
+ol{
+   font-size: 80%;
+  line-height: 120%;
+  font-weight: normal;
+}
+
+#works-cited{
+  page-break-before: always !important; /*break page before h1*/
 }
