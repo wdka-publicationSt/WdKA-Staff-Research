@@ -122,6 +122,8 @@ h1::after {
 
  h3{
   padding-bottom: 1mm;
+  margin-bottom: 0;
+  padding-bottom: 0;
  }
 
  h4{
