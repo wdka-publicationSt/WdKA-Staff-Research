@@ -48,21 +48,22 @@
   padding-left: 0cm; /*outer margin*/
 
   	@top-center {
-  content: string(doctitle);
-  font-family: 'KoHo', sans-serif;
-          font-size: 70%;
-    text-align: left;
-    padding: 0;
-    width: 1ch;
-  overflow: hidden;
-  white-space: nowrap;
+      content: string(doctitle);
+      font-family: 'KoHo', sans-serif;
+      font-size: 70%;
+      text-align: left;
+      padding: 0;
+      width: 1ch;
+      overflow: hidden;
+      white-space: nowrap;
 
-        }
+    }
 
     @bottom-center {
-       content: counter(page);
-          font-family: 'KoHo', sans-serif;
-          font-size: 70%;}
+      content: counter(page);
+      font-family: 'KoHo', sans-serif;
+      font-size: 70%;
+    }
 
 }
 
@@ -81,13 +82,12 @@ h1 {
   font-family: 'KoHo', sans-serif;
   font-size: 20pt;
   line-height: 23pt;
-    margin-bottom: 0;
+  margin-bottom: 0;
   padding-bottom: 0;
-    margin: 0;
+  margin: 0;
   padding: 0;
-      margin-block-start: 0em;
-          margin-block-end: 0em;
-
+  margin-block-start: 0em;
+  margin-block-end: 0em;
 }
 
 
@@ -97,15 +97,12 @@ h1 {
 #an-invitation-a-workshop-a-skype-conversation-and-some-questions,
 #the-workshop-of-other-knowledge,
 #post-scripted-script-of-a-pechakucha-talk,
-#strategies-of-reclaiming
-
-
- {
+#strategies-of-reclaiming{
   string-set: doctitle content();
 }
 
 h2 {
-      margin-bottom: 0;
+  margin-bottom: 0;
   padding-bottom: 0;
 	page-break-before: avoid !important; /*break page before h2*/
 }
@@ -136,11 +133,11 @@ h1::after {
 
 h5{
   font-size: 80%;
-       margin-bottom: 0;
+  margin-bottom: 0;
   padding-bottom: 0;
   padding-bottom: 1mm;
   font-weight: normal;
-  page-break-before: avoid !important; /*break page before h2*/
+  page-break-before: always !important;
 }
 
 h6{
@@ -165,8 +162,8 @@ p{
 }
 
 a {
-	    text-decoration: none;
-    color: black;
+	text-decoration: none;
+  color: black;
 }
 
 /**
@@ -174,17 +171,17 @@ a {
 */
 #toc:before {
   content: "Table of contents";
-    page-break-before: always !important; /*break page before h1*/
+  page-break-before: always !important; /*break page before h1*/
   font-family: 'KoHo', sans-serif;
   font-size: 20pt;
   line-height: 23pt;
-    margin-bottom: 0;
+  margin-bottom: 0;
   padding-bottom: 0;
-    margin: 0;
+  margin: 0;
   padding: 0;
-      margin-block-start: 0em;
-          margin-block-end: 0em;
-          font-weight: bold;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  font-weight: bold;
 }
 #toc li a::after {
   float: right;
@@ -198,8 +195,8 @@ a {
 }
 
 ul,li,blockquote{
- margin:0;
- padding:0;
+  margin:0;
+  padding:0;
 }
 
 figcaption{
@@ -234,16 +231,17 @@ sup{
 }
 
 #footnotes{
-   font-size: 80%;
+  font-size: 80%;
   line-height: 120%;
   font-weight: normal;
 }
 
 ol:before {
   content: "End Notes";
+  font-weight: bold;
 }
 ol{
-   font-size: 80%;
+  font-size: 80%;
   line-height: 120%;
   font-weight: normal;
 }
