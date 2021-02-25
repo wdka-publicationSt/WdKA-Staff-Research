@@ -196,6 +196,7 @@ a {
   Insert numbers after toc item in toc
 */
 #toc:before {
+  
   content: "Table of contents";
   page-break-before: always !important; /*break page before h1*/
   font-family: 'KoHo', sans-serif;
