@@ -97,7 +97,9 @@ h1 {
 #an-invitation-a-workshop-a-skype-conversation-and-some-questions,
 #the-workshop-of-other-knowledge,
 #post-scripted-script-of-a-pechakucha-talk,
-#strategies-of-reclaiming{
+#strategies-of-reclaiming,
+#biographies,
+#colophon{
   string-set: doctitle content();
 }
 #biographies,
