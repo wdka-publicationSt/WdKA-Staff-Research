@@ -88,7 +88,17 @@ h1 {
 
 }
 
-h1 #the-autonomous-fabric, #the-autonomous-fabric {
+
+#the-autonomous-fabric, 
+#what-is-autonomy,
+#art-and-design-in-new-economies-speculative-scenarios-for-real-life-innovations,
+#an-invitation-a-workshop-a-skype-conversation-and-some-questions,
+#the-workshop-of-other-knowledge,
+#post-scripted-script-of-a-pechakucha-talk,
+#strategies-of-reclaiming
+
+
+ {
   string-set: doctitle content();
 }
 
@@ -122,6 +132,9 @@ h1::after {
 
 h5{
   font-size: 80%;
+       margin-bottom: 0;
+  padding-bottom: 0;
+  padding-bottom: 1mm;
   font-weight: normal;
   page-break-before: avoid !important; /*break page before h2*/
 }
