@@ -134,7 +134,8 @@ h1::after {
  h4{
   margin-left: 1cm;
   font-weight: normal;
-
+  page-break-before: auto !important;
+  page-break-inside: auto!important; 
  }
 
 h5{
