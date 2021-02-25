@@ -10,7 +10,7 @@
     padding-top:8%;
     padding-bottom: 16%;*/
     marks: crop;
-    bleed: 3mm;
+    bleed: 5mm; /* Bigger bleed as weasyprint draws the cropmarks within the bleed*/
 }
 
 @page:first {

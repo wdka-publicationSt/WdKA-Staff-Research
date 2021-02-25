@@ -2,7 +2,7 @@ function mm (val) {
   return val / 0.352777778
 }
 
-var pageWidth = mm(148 + 9 + 148),
+var pageWidth = mm(148 + 8.56 + 148),
     pageHeight = mm(210),
     slugLength = mm(5), // max(cropmarklength + cropmarkOffset, bleed)
     cropMarkLength = mm(1.5),
