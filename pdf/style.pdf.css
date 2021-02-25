@@ -172,6 +172,20 @@ a {
 /**
   Insert numbers after toc item in toc
 */
+#toc:before {
+  content: "Table of contents";
+    page-break-before: always !important; /*break page before h1*/
+  font-family: 'KoHo', sans-serif;
+  font-size: 20pt;
+  line-height: 23pt;
+    margin-bottom: 0;
+  padding-bottom: 0;
+    margin: 0;
+  padding: 0;
+      margin-block-start: 0em;
+          margin-block-end: 0em;
+          font-weight: bold;
+}
 #toc li a::after {
   float: right;
   content: target-counter(attr(href), page);
@@ -223,6 +237,10 @@ sup{
    font-size: 80%;
   line-height: 120%;
   font-weight: normal;
+}
+
+ol:before {
+  content: "End Notes";
 }
 ol{
    font-size: 80%;
