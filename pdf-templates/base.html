@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    <article id="cover">
+        <!-- You could insert the cover here -->
+    </article>
+    <article id="toc">
+        <!-- Generate the table of contents -->
+        <ul>
+            {% for text in TOC %}
+                <li>
+                    <a href="#{{ text.slug }}">{{ text.title }}</a>
+                </li>
+            {% endfor %}
+        </ul>    
+    </article>
+    {% for text in TOC %}
+        <!-- Loop through the texts and insert their HTML snippet here -->
+        <article id="{{ text.slug }}">
+            {{ text.html_content }}
+        </article>
+    {% endfor %}
+</body>
+</html>

@@ -25,7 +25,7 @@ html{
 		position: relative;
 	    display: inline-block;	
 	    width: 40%;
-      margin-left: 10%;
+      margin-left: 20%;
       padding-top: 5%;
 	}	
 
@@ -47,7 +47,7 @@ html{
 	left: 0%;
 	top: 0%;
 	max-width:70%;
-	padding-left: 2%;
+	padding-left: 10%;
   padding-right: 3%;
   padding-top: 5%;
 	
@@ -322,3 +322,171 @@ div#ArtandDesigninNewEconomiesSpeculativeScenariosForReal-lifeInnovations a {
 #zes:hover{
     -webkit-animation-play-state: paused;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 700px) {
+  html,body{
+    all: unset;
+    width: 100%; overflow-x: hidden;
+  }
+
+  body{
+    width: 100%;
+  }
+
+  div.left{
+
+    width:80%;
+    padding: 10%;
+  }  
+  div.right{
+
+    width:80%;
+
+  }  
+
+  .menu{
+    all: unset;
+
+  }
+
+  ul.menu{
+    font-family: 'KoHo', sans-serif;
+    text-decoration:none;
+
+    color: black;
+  }
+
+  #publication_title{
+  position: relative;
+  max-width: 50%;
+
+  line-height: 1em;
+
+}
+
+li.menuitem {
+  margin-bottom: 10px;
+  list-style-type:none;
+  color: black;
+
+ }
+li.menuitem span.title{ 
+  color: inherit;
+  list-style-type:none;
+  text-decoration:none;
+  color: black;
+  font-family: 'KoHo', sans-serif;
+  font-weight: bold;
+
+}
+li.menuitem span.authors{ 
+  display: block; 
+  font-size: 15px;
+  color: black;
+
+}
+li.menuitem a { 
+  list-style-type:none;
+  text-decoration:none;
+  color: black;
+
+}
+
+
+
+
+h1{
+  font-family: 'KoHo', sans-serif;
+  font-size: 250%;
+  top: 0%;
+  margin: 0%;
+}
+
+h2{
+   margin: 0px;
+   padding: 0px;
+}
+
+h3{
+  font-size: 12pt;
+}
+
+p{
+ font-size: 20px;
+ margin-top: 0px;
+}
+
+blockquote{
+  font-size: 8pt;
+  font-style: italic;
+  text-align: center;
+}
+
+figure{    
+  margin:0px;
+/*  width: 400px;*/
+  }
+
+img {width:100%;
+  -webkit-transition: width 2s; /* Safari */
+  transition: width 2s;
+  }
+img:hover{
+/*  width: 70%;*/
+
+}
+
+figcaption {
+ /*   display: inline-block;*/
+    font-size: 15px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+hr{
+}
+
+
+
+li{
+
+}
+
+#content{
+
+}
+
+
+[role=doc-endnote]{
+    text-decoration: none;
+  font-size: 10px;
+}
+
+[role=doc-backlink]{
+  text-decoration: none;
+
+}
+
+.footnote-ref{
+  text-decoration: none;
+  font-size: 75%;
+
+}
+
+
+
+}
+
