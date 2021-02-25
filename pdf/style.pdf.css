@@ -97,8 +97,14 @@ h1 {
 #an-invitation-a-workshop-a-skype-conversation-and-some-questions,
 #the-workshop-of-other-knowledge,
 #post-scripted-script-of-a-pechakucha-talk,
-#strategies-of-reclaiming{
+#strategies-of-reclaiming,
+#biographies,
+#colophon{
   string-set: doctitle content();
+}
+#biographies,
+#colophon{
+
 }
 
 h2 {
@@ -114,10 +120,16 @@ h1::after {
 
   }
 
- h2{
+ h2{  
+  padding-top: 0;
+  margin-top: 0;
   padding-bottom: 1mm;
   
  } 
+
+h2:first-child {
+margin-top: 0;
+}
 
  h3{
   padding-bottom: 1mm;
@@ -128,7 +140,8 @@ h1::after {
  h4{
   margin-left: 1cm;
   font-weight: normal;
-
+  page-break-before: auto !important;
+  page-break-inside: auto!important; 
  }
 
 h5{
@@ -138,6 +151,10 @@ h5{
   padding-bottom: 1mm;
   font-weight: normal;
   page-break-before: always !important;
+}
+
+h5:first-child {
+margin-top: 0;
 }
 
 h6{
@@ -204,6 +221,10 @@ figcaption{
   line-height: 120%;
 }
 
+figure{
+  page-break-inside: avoid!important; 
+}
+
 #footnote-back{
   visibility: hidden;
 }
@@ -236,10 +257,16 @@ sup{
   font-weight: normal;
 }
 
-ol:before {
+#footnotes ol:before {
   content: "End Notes";
   font-weight: bold;
 }
+
+#footnotes:first-child hr {
+display: none;
+}
+
+
 ol{
   font-size: 80%;
   line-height: 120%;
@@ -247,5 +274,8 @@ ol{
 }
 
 #works-cited{
+  padding-top: 0;
+  padding-left: 0;
+  margin-top: 0;
   page-break-before: always !important; /*break page before h1*/
 }
