@@ -107,6 +107,10 @@ h1 {
 
 }
 
+#toc {​​​​
+  break-before: right;
+}​​​​
+
 h2 {
   margin-bottom: 0;
   padding-bottom: 0;
