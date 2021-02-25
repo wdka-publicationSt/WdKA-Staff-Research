@@ -100,6 +100,10 @@ h1 {
 #strategies-of-reclaiming{
   string-set: doctitle content();
 }
+#biographies,
+#colophon{
+
+}
 
 h2 {
   margin-bottom: 0;
@@ -202,6 +206,10 @@ ul,li,blockquote{
 figcaption{
   font-size: 80%;
   line-height: 120%;
+}
+
+figure{
+  page-break-inside: avoid!important; 
 }
 
 #footnote-back{
