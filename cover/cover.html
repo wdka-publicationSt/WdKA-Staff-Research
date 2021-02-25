@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+
+    @import url('https://fonts.googleapis.com/css?family=KoHo&display=swap');
+
+    :root {
+      --page-width: 148mm;
+      --page-height: 210mm;
+      --bleed: 3mm;
+      --spline-width: 9mm;
+    }
+
+    @page {
+      size: 305mm 210mm;
+      marks: crop;
+      bleed: 3mm;
+      margin: 0;
+    }
+
+    body, html {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'KoHo', sans-serif;
+    }
+
+    #canvasFront {
+      /* outline: 1px dotted red; */
+      width: var(--page-width);
+      height: var(--page-height);
+      overflow: hidden;
+      position: absolute;
+      top: 0;
+      left: 157mm; /* calc(var(--page-width) + var(--spline-width)); */
+    }
+
+     #canvasBack {
+      /* outline: 1px dotted red; */
+      width: var(--page-width);
+      height: var(--page-height);
+      overflow: hidden;
+      position: absolute;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .icon {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      font-size: 120%;
+    }
+
+    .spline-icon {
+      font-size: 120%;
+      display: inline-block;
+    }
+
+    .icon-two {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+    }
+
+    .icon-three {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+    }
+    .icon-four {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+    }
+    .icon-five {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+    }
+    .icon-six {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+    }
+    .icon-seven {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+    }
+    .icon-eight {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+    }
+
+    #title{
+      padding: 10mm;
+    }
+
+    h1{
+      font-size: 300%;
+      line-height: 100%;
+    }
+
+    h1{
+      font-size: 300%;
+      line-height: 100%;
+    }
+
+    img{
+      padding-top: 10mm;
+      height: 1.5cm;
+      padding-left: 20mm;
+      padding-right: 20mm;
+
+    }
+
+    #spline {
+      box-sizing: border-box;
+      position: absolute;
+      width: var(--page-height);
+      height: var(--spline-width);
+      left: calc(var(--page-width) + var(--spline-width));
+      top: 0;
+      transform: rotate(90deg);
+      transform-origin: top left;
+      padding-left: 5mm;
+      padding-top: 2mm;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div id="canvasBack">
+    <div id="title">  
+      <p>
+        When the Willem de Kooning Academy and Codarts University of the Arts hosted the 15th ELIA Biennial Conference: Resilience and the City: Art, Education, Urbanism in 2018, it was an ideal opportunity to share research and knowledge with over 460 delegates from art academies across Europe and beyond. The WdKA operates from the perspective that art and design research produces new forms of knowledge and practices and is a catalyst for innovation and social transformation. This publication offers a selection of conference contributions by teaching staff and embraces this ethos. Rather than being organized under a single overarching theme, it is a collection of diverse research embedded in the Social, Autonomous, and Commercial Practices, the Stations, and pedagogical projects and explorative trajectories running parallel and at times, parasitic to the curriculum.<br>  
+        <br>
+        <b>Hybrid Publishing</b><br>
+        This publication was developed by Hybrid Publishing, founded by the Willem de Kooning Academy as a means of profiling and disseminating outstanding research conducted by its students and teaching staff, whether independently or in collaboration with external partners. Researching and experimenting across a broad range of processes native to digital and analog media, WdKA Hybrid Publishing fosters novel approaches to design, authoring, reading and dissemination made possible through ongoing developments from the legacies of Gutenberg’s press to present-day technologies. (hybridpublishing.wdka.nl)
+      </p>
+      <img src="wdkalogo.png">
+      <img src="hplogo.png">
+
+    </div>
+  </div>
+
+  <div id="spline">
+    <div class="spline-icon">+</div>
+    <div class="spline-icon">*</div>
+    <div class="spline-icon">◊</div>
+    <div class="spline-icon">▽</div>
+    <div class="spline-icon">๏</div>
+    <div class="spline-icon">↑</div>
+    <div class="spline-icon">></div>
+    <div class="spline-icon">◊</div>
+    <div class="spline-icon">◊</div>
+  </div>
+
+  <!-- The container in which the icons move -->
+  <div id="canvasFront">
+    <div id="title">  
+      <h1>WdKA Research: <br>A Selection of Contributions to the 15th ELIA Biennial Conference 2018</h1>
+      <h2>Willem de Kooning Academy</h2>
+    </div>
+  </div>
+
+  <!-- Icons themselves -->
+  <div class="icon">+</div>
+  <div class="icon icon-two">*</div>
+  <div class="icon icon-three">◊</div>
+  <div class="icon icon-four">▽</div>
+  <div class="icon icon-five">๏</div>
+  <div class="icon icon-six">↑</div>
+  <div class="icon icon-seven">></div>
+  <div class="icon icon-eight">◊</div>
+  <div class="icon icon-three">◊</div>
+
+  <script>
+    window.PagedConfig={
+      auto:false
+      };
+  </script>
+  <script src="https://unpkg.com/pagedjs/dist/paged.polyfill.js"></script>
+  <script>
+    // Moves and clone elements within a container.
+    function shouldStamp () {
+      // Called for every postion, if it returns true
+      return Math.random() < (10 / 50);
+    }
+
+    var canvas = document.querySelector('#canvasFront'),
+        canvasRect = canvas.getBoundingClientRect(),
+        icons = document.querySelectorAll('.icon'),
+        minPositions = 200, // The minimal amount of positions calculated
+        maxPositions = 800, // The maximum amount of positions calculated
+        maxVelocity = [8, 8]; // maxVelocity on x and y
+
+    for (var i = 0; i < icons.length; i++) {
+      var icon = icons[i],
+          velocity = [-.5 * maxVelocity[0] + Math.random() * maxVelocity[0], -.5 * maxVelocity[1] + Math.random() * maxVelocity[1]],
+          iconRect = icon.getBoundingClientRect(),
+          position = [Math.random() * canvasRect.width - iconRect.width, Math.random() * canvasRect.height - iconRect.height],
+          positions = minPositions + Math.random() * (maxPositions - minPositions);
+
+      for (var p = 0; p < positions; p++) {
+        // Calculate positions
+        if (shouldStamp()) {
+          // If the icon should be stamped, place it at the current position
+          var stamp = icon.cloneNode(true);
+          stamp.style.left = position[0] + 'px';
+          stamp.style.top = position[1] + 'px';
+          canvas.appendChild(stamp);
+        }
+
+        // Calculate the next position
+        position = [position[0] + velocity[0], position[1] + velocity[1]];
+
+        if (position[0] < 0) {
+          // Bounce on left wall, inflect direction 
+          position[0] -= position[0];
+          velocity[0] = -velocity[0];
+        } else if ((position[0] + iconRect.width) > canvasRect.width) {
+          // Bounce on the right wall, inflect direction
+          position[0] -= (position[0] + iconRect.width) - canvasRect.width;
+          velocity[0] = -velocity[0];
+        }
+
+        if (position[1] < 0) {
+          // Bounce on top wall, inflect direction 
+          position[1] -= position[1];
+          velocity[1] = -velocity[1];
+        } else if ((position[1] + iconRect.height) > canvasRect.height) {
+          // Bounce on the bottom wall, inflect direction
+          position[1] -= (position[1] + iconRect.height) - canvasRect.height;
+          velocity[1] = -velocity[1];
+        }
+      }
+    }
+
+    // Remove icons that aren't placed in the canvas
+    for (var i = (icons.length - 1); i >= 0; i--) {
+      icons[i].parentElement.removeChild(icons[i]);
+    }
+
+    window.PagedPolyfill.preview();
+  </script>
+</body>
+</html> 
