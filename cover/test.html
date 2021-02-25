@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #canvas {
+      position: relative;
+      outline: 1px dotted red;
+      width: 500px;
+      height: 1000px;
+      overflow: hidden;
+    }
+
+    .icon {
+      position: absolute;
+      background: pink;
+      width: 30px;
+      height: 30px;
+    }
+
+    .icon-two {
+      position: absolute;
+      background: yellow;
+      width: 40px;
+      height: 10px;
+    }
+
+    .icon-three {
+      position: absolute;
+      background: green;
+      width: 30px;
+      height: 30px;
+    }
+  </style>
+</head>
+<body>
+  <!-- The container in which the icons move -->
+  <div id="canvas"></div>
+
+  <!-- Icons themselves -->
+  <div class="icon"></div>
+  <div class="icon icon-two"></div>
+  <div class="icon icon-three"></div>
+  <script>
+    // Moves and clone elements within a container.
+    function shouldStamp () {
+      // Called for every postion, if it returns true
+      return Math.random() < (5 / 100);
+    }
+
+    var canvas = document.querySelector('#canvas'),
+        canvasRect = canvas.getBoundingClientRect(),
+        icons = document.querySelectorAll('.icon'),
+        minPositions = 200, // The minimal amount of positions calculated
+        maxPositions = 800, // The maximum amount of positions calculated
+        maxVelocity = [8, 8], // maxVelocity on x and y;
+
+    for (let i = 0; i < icons.length; i++) {
+      const icon = icons[i];
+      var velocity = [-.5 * maxVelocity[0] + Math.random() * maxVelocity[0], -.5 * maxVelocity[1] + Math.random() * maxVelocity[1]],
+          iconRect = icon.getBoundingClientRect(),
+          position = [Math.random() * canvasRect.width - iconRect.width, Math.random() * canvasRect.height - iconRect.height],
+          steps = minPositions + Math.random() * (maxPositions - minPositions);
+
+      for (var p = 0; p < positions; p++) {
+        // Calculate positions
+        if (shouldStamp()) {
+          // If the icon should be stamped, place it at the current position
+          var stamp = icon.cloneNode(true);
+          stamp.style.left = position[0] + 'px';
+          stamp.style.top = position[1] + 'px';
+          canvas.appendChild(stamp);
+        }
+
+        // Calculate the next position
+        position = [position[0] + velocity[0], position[1] + velocity[1]];
+
+        if (position[0] < 0) {
+          // Bounce on left wall, inflect direction 
+          position[0] -= position[0];
+          velocity[0] = -velocity[0];
+        } else if ((position[0] + iconRect.width) > canvasRect.width) {
+          // Bounce on the right wall, inflect direction
+          position[0] -= (position[0] + iconRect.width) - canvasRect.width;
+          velocity[0] = -velocity[0];
+        }
+
+        if (position[1] < 0) {
+          // Bounce on top wall, inflect direction 
+          position[1] -= position[1];
+          velocity[1] = -velocity[1];
+        } else if ((position[1] + iconRect.height) > canvasRect.height) {
+          // Bounce on the bottom wall, inflect direction
+          position[1] -= (position[1] + iconRect.height) - canvasRect.height;
+          velocity[1] = -velocity[1];
+        }
+      }
+    }
+
+    // Remove icons that aren't placed in the canvas
+    for (var i = (icons.length - 1); i >= 0; i--) {
+      icons[i].parentElement.removeChild(icons);
+    }
+  </script>
+</body>
+</html> 
