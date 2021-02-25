@@ -140,8 +140,10 @@ margin-top: 0;
  h4{
   margin-left: 1cm;
   font-weight: normal;
-  page-break-before: auto !important;
-  page-break-inside: auto!important; 
+ 
+  margin-bottom: 0;
+  break-before: auto;
+  break-after: auto;
  }
 
 h5{
@@ -151,6 +153,8 @@ h5{
   padding-bottom: 1mm;
   font-weight: normal;
   page-break-before: always !important;
+  break-before: auto;
+  break-after: auto;
 }
 
 h5:first-child {
@@ -159,9 +163,10 @@ margin-top: 0;
 
 h6{
   font-size: 80%;
-  
   font-weight: normal;
   margin:0;
+  break-before: auto;
+  break-after: auto;
 }
 
 
