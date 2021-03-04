@@ -4,59 +4,59 @@ Publisher: "Hybrid Publishing, WdKA"
 Design: "Myrna de Bruijn"
 TOC:
       # follow this structure for all articles:
-  - title: "Introduction" 
-    docx: "Introduction_la.docx"
+  - title: "Introduction"
+    docx: "Introduction.docx"
     slug: "article-introduction"
 
   - title: "+ The Autonomous Fabric"
-    authors: 
-      - "Florian Cramer" 
-    docx: "Captions The Autonomous Fabric_DEF.docx"
+    authors:
+      - "Florian Cramer"
+    docx: "TheAutonomousFabric.docx"
     slug: "article-the-autonomous-fabric"
-  
+
   - title: "* What is Autonomy?"
-    authors: 
-      - "Florian Cramer" 
-    docx: "SimonFlorian_what-is-autonomy_DEF.docx"
+    authors:
+      - "Florian Cramer"
+    docx: "WhatisAutonomy.docx"
     slug: "article-what-is-autonomy"
 
   - title: "◊ Art and Design in New Economies: Speculative Scenarios For Real&#8209;life Innovations"
-    authors: 
-      - "Deanna Herst" 
-    docx: "DeannaHerst_DEF.docx"
+    authors:
+      - "Deanna Herst"
+    docx: "ArtandDesigninNewEconomies.docx"
     slug: "article-art-and-design-in-new-economies"
 
-  - title: "▽ An invitation, a workshop, a skype conversation and some questions"
-    authors: 
+  - title: "▽ An Invitation, a Workshop, a Skype Conversation and some Questions"
+    authors:
       - "Rolf Engelen"
       - "Vanessa Jane Phaff"
       - "Sjoerd Westbroek"
-      - "Johanneke van der Ziel" 
-    docx: "Engelen-Phaff-Westbroek-Ziel_ELIAHybridPublishing_DEF.docx"
+      - "Johanneke van der Ziel"
+    docx: "AnInvitation.docx"
     slug: "article-an-invitation"
 
-  - title: "๏ The workshop of Other Knowledge"
-    authors: 
-      - "Aldje van Meer" 
-    docx: "AldjevanMeer_DEF.docx"
-    slug: "article-workshop-of-other-knowledhe"
+  - title: "๏ The Workshop of Other Knowledge"
+    authors:
+      - "Aldje van Meer"
+    docx: "TheWorkshopofOtherKnowledge.docx"
+    slug: "article-workshop-of-other-knowledge"
 
-  - title: "↑ Post-scripted script of a Pecha Kucha talk"
-    authors: 
-      - "Clara Balaguer" 
-    docx: "Clara_PechaKucha_ELAINE_def.docx"
+  - title: "↑ Post-scripted Script of a Pecha Kucha Talk"
+    authors:
+      - "Clara Balaguer"
+    docx: "Post-scriptedScriptofaPechaKuchaTalk.docx"
     slug: "article-post-scripted-script"
 
   - title: "> Strategies of Reclaiming"
-    authors: 
-      - "Michelle Teran" 
-    docx: "MichelleTeranStrategiesofReclaiming_DEF.docx"
+    authors:
+      - "Michelle Teran"
+    docx: "StrategiesofReclaiming.docx"
     slug: "article-strategies of reclaiming"
 
-  - title: "Biographies" 
-    docx: "Biografies_la.docx" 
-    slug: "article-biografies"
+  - title: "Biographies"
+    docx: "Biographies.docx"
+    slug: "article-biographies"
 
-  - title: "Colophon" 
-    docx: "Colophon_la.docx"
+  - title: "Colophon"
+    docx: "Colophon.docx"
     slug: "article-colophon"
