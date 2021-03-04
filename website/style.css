@@ -25,8 +25,9 @@ html{
 		position: relative;
 	    display: inline-block;	
 	    width: 40%;
-      margin-left: 20%;
+      margin-left: 10%;
       padding-top: 5%;
+      padding-bottom: 5%;
 	}	
 
 .move{
@@ -46,7 +47,7 @@ html{
 	overflow-x: hidden;
 	left: 0%;
 	top: 0%;
-	max-width:70%;
+	max-width:50%;
 	padding-left: 10%;
   padding-right: 3%;
   padding-top: 5%;
@@ -103,7 +104,9 @@ li.menuitem a {
 
 /* body */
 
-
+html{
+  font-family: 'KoHo', sans-serif;
+}
 
 body{
 	font-family: 'KoHo', sans-serif;
@@ -122,17 +125,28 @@ h1{
 }
 
 h2{
+  font-family: 'KoHo', sans-serif;
    margin: 0px;
    padding: 0px;
 }
 
 h3{
+  font-family: 'KoHo', sans-serif;
 	font-size: 12pt;
+}
+
+h6{
+  font-family: 'KoHo', sans-serif;
+  font-weight: normal;
+  font-size: 100%;
+  margin-left: 0;
+  padding-left: 0;
 }
 
 p{
  font-size: 20px;
  margin-top: 0px;
+ font-family: 'KoHo', sans-serif;
 }
 
 blockquote{
@@ -171,6 +185,12 @@ hr{
 
 li{
 
+}
+
+ol:before {
+  content: "End Notes";
+  font-weight: bold;
+  font-family: 'KoHo', sans-serif;
 }
 
 #content{
@@ -220,108 +240,6 @@ div#ArtandDesigninNewEconomiesSpeculativeScenariosForReal-lifeInnovations a {
 
 }
 
-@keyframes mymove1 {
-  0%   {top: 0%; left: 0%; background;}
-  25%  {top: 10%; left: 60%; background;}
-  50%  {top: 60%; left: 40%; background;}
-  75%  {top: 40%; left: 30%; background;}
-  100% {top: 0%; left: 0%; background;}
-}
-
-#een,#twee,#drie,#vier,#vijf,#zes{
-	font-size: 200%;
-}
-
-#een{
-  position: absolute;
-  animation: mymove1 5s infinite;
-}
-  
-#een:hover{
-    -webkit-animation-play-state: paused;
-}
-
-#twee{
-  position: absolute;
-  animation: mymove2 6s infinite;
-}
-@keyframes mymove2 {
-  0%   {top: 20%; left: 40%; background;}
-  25%  {top: 60%; left: 10%; background;}
-  50%  {top: 40%; left: 30%; background;}
-  75%  {top: 10%; left: 0%; background;}
-  100% {top: 20%; left: 40%; background;}
-}
-  
-#twee:hover{
-    -webkit-animation-play-state: paused;
-}
-
-#drie{
-  position: absolute;
-  animation: mymove3 5s infinite;
-}
-@keyframes mymove3 {
-  0%   {top: 60%; left: 30%; background;}
-  25%  {top: 30%; left: 20%; background;}
-  50%  {top: 30%; left: 30%; background;}
-  75%  {top: 10%; left: 60%; background;}
-  100% {top: 60%; left: 30%; background;}
-}
-  
-#drie:hover{
-    -webkit-animation-play-state: paused;
-}  
-  
-
-#vier{
-  position: absolute;
-  animation: mymove4 4s infinite;
-}
-@keyframes mymove4 {
-  0%   {top: 20%; left: 20%; background;}
-  25%  {top: 0%; left: 20%; background;}
-  50%  {top: 10%; left: 10%; background;}
-  75%  {top: 60%; left: 10%; background;}
-  100% {top: 20%; left: 20%; background;}
-}
-  
-#vier:hover{
-    -webkit-animation-play-state: paused;
-}
-  
-#vijf{
-  position: absolute;
-  animation: mymove5 4s infinite;
-}
-@keyframes mymove5 {
-  0%   {top: 40%; left: 10%; background;}
-  25%  {top: 10%; left: 0%; background;}
-  50%  {top: 10%; left: 20%; background;}
-  75%  {top: 20%; left: 50%; background;}
-  100% {top: 40%; left: 10%; background;}
-}
-  
-#vijf:hover{
-    -webkit-animation-play-state: paused;
-}
-  
-  #zes{
-  position: absolute;
-  animation: mymove6 6s infinite;
-}
-
-@keyframes mymove6 {
-  0%   {top: 40%; left: 30%; background;}
-  25%  {top: 0%; left: 0%; background;}
-  50%  {top: 10%; left: 20%; background;}
-  75%  {top: 40%; left: 60%; background;}
-  100% {top: 40%; left: 30%; background;}
-}
-  
-#zes:hover{
-    -webkit-animation-play-state: paused;
-}
 
 
 
