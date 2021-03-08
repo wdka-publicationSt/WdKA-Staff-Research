@@ -8,7 +8,7 @@ html{
 
 	scroll-behavior: smooth;
   font-family: 'KoHo', sans-serif;
-  
+  background-color: #7DB6D2;
 
 }
 
@@ -151,7 +151,15 @@ h4{
 }
 
 h5{
-  font-size: 80%;
+ 
+  margin-bottom: 0;
+  padding-bottom: 0;
+  padding-bottom: 1mm;
+  font-weight: normal;
+  page-break-before: always !important;
+  break-before: auto;
+  break-after: auto;
+}
 }
 
 h6{
@@ -217,7 +225,7 @@ ol:before {
 
 [role=doc-endnote]{
     text-decoration: none;
-  font-size: 10px;
+ 
 }
 
 [role=doc-backlink]{
