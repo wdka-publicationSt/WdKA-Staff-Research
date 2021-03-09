@@ -115,6 +115,22 @@ elif args.output == 'website':
     convert_loop(TOC=metadata['TOC'],
                  _from='docx',
                  _to='html')
+
+    index_page = jinja_render_template(
+        env=env,
+        tmpl_file='index.html',
+        title='',
+        TOC=metadata['TOC'],  # used in menu
+        content='',
+        css=True,
+        publication_title=metadata['Title'],
+        # TODO: add authors
+        # TODO rm contentpage.html
+    )
+
+    with open('website/index.html', 'w') as index_page_file:
+        index_page_file.write(index_page)
+
     for text_entry in metadata['TOC']:
         print(text_entry['html'])
         with open(text_entry['html'], 'r') as html_file:

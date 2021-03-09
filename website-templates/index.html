@@ -1,0 +1,17 @@
+{% from 'menu.html' import menu as menu %}
+{% extends "base.html" %}
+
+{% block title %}{{ publication_title }}{% endblock %}
+
+{% block content %} 
+	<div class="left">
+		<div class="menu">
+			{{ menu(TOC, publication_title=publication_title ) }}
+		</div>
+	</div>
+
+	<!-- index code here. -->
+
+	</div>
+{% endblock %}
+
