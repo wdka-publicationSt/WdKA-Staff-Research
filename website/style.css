@@ -38,8 +38,10 @@ html{
 #publication_title{
 	position: relative;
 	max-width: 50%;
-
 	line-height: 1em;
+  list-style-type: none;
+  text-decoration: none;
+  color: black;
 
 
 }
@@ -51,12 +53,17 @@ html{
 	max-width:50%;
 	padding-left: 10%;
   padding-right: 3%;
- 
-	
+    list-style-type:none;
+  text-decoration:none;
 
 }
+
+
+
+
 ol.menu {}
 li.menuitem { }
+
 
 ul.menu{
   	font-family: 'KoHo', sans-serif;
@@ -76,8 +83,11 @@ li.menuitem {
 	margin-bottom: 10px;
 	list-style-type:none;
   color: black;
-
  }
+
+
+
+
 li.menuitem span.title{ 
 	color: inherit;
 	list-style-type:none;
@@ -88,17 +98,29 @@ li.menuitem span.title{
 
 }
 li.menuitem span.authors{ 
-	display: block; 
+	display: none; 
+	  font-family: 'KoHo', sans-serif;
 	font-size: 15px;
-  color: black;
-
+  color: green;
 }
+
+
+
+
 li.menuitem a { 
 	list-style-type:none;
 	text-decoration:none;
   color: black;
 
 }
+
+a::hover { 
+  list-style-type:none;
+  text-decoration:none;
+  color: grey;
+
+}
+
 
 
 
@@ -168,6 +190,13 @@ h6{
   font-size: 100%;
   margin-left: 0;
   padding-left: 0;
+}
+
+a{
+  text-decoration: none;
+}
+a:hover{
+  color: grey;
 }
 
 p{
@@ -281,6 +310,7 @@ div#ArtandDesigninNewEconomiesSpeculativeScenariosForReal-lifeInnovations a {
   html,body{
     all: unset;
     width: 100%; overflow-x: hidden;
+    background-color: #7DB6D2;
   }
 
   body{
@@ -301,6 +331,10 @@ div#ArtandDesigninNewEconomiesSpeculativeScenariosForReal-lifeInnovations a {
   .menu{
     all: unset;
 
+  }
+
+  #canvas{
+    padding: 10%;
   }
 
   ul.menu{
@@ -334,7 +368,7 @@ li.menuitem span.title{
 
 }
 li.menuitem span.authors{ 
-  display: block; 
+  display: none; 
   font-size: 15px;
   color: black;
 
