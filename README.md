@@ -95,11 +95,11 @@ When the PDF's are generated using the browser or weasyprint there are some proc
 
 The tools used are ghostscript, mutool and pdftk; Ghostcript to convert the images into the correct colorspace at the right resolution, mutool to set the correct page boxes and, if necessary, to clone pages. Finally we use pdftk to reorder and/or duplicate pages and to combine (concatenate) multiple PDF files into one.
 
-In folders pdf & cover there are bashscripts `BakePDF.sh` to prepare a correct pdf for print.
+The bash scripts `pdf/BakePDF.sh` and `cover/BakePDF.sh` are used to prepare a correct cover and content pdf for print.
 
 ### Output for web / digital distribution
 
-In the pdf folder there is the bash script `BakePDFWeb.sh` which generates a PDF suitable for distribution over the web. This pdf differs from the files intended for print in the following ways:
+The bash script `pdf/BakePDFWeb.sh` generates a PDF suitable for distribution over the web. This pdf differs from the files intended for print in the following ways:
 - Color conversion isn't necessary.
 - Images can be encoded at a lower resolution, 150 rather then 300 dpi, reducing the filesize
 - The pageboxes have to be adjusted to hide the cropmarks.
