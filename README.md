@@ -101,6 +101,6 @@ The bash scripts `pdf/bakePDF.sh` and `cover/bakePDF.sh` are used to prepare a c
 
 The bash script `pdf/bakePDFWeb.sh` generates a PDF suitable for distribution over the web. This pdf differs from the files intended for print in the following ways:
 - Color conversion isn't necessary.
-- Images can be encoded at a lower resolution, 150 rather then 300 dpi, reducing the filesize
+- Images can be encoded at a lower resolution, 150 rather then 300 dpi, reducing the filesize.
 - The pageboxes have to be adjusted to hide the cropmarks.
 - The cover has to be split into a front and back cover and they have to be inserted at the start and end of the document.
